@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#7A58CDE1">
+
+    <EditText
+        android:id="@+id/ip_ESP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Введите IP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40sp"
+        android:textSize="@dimen/textSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#B53FA5" />
+
+    <Button
+        android:id="@+id/save_ip_adderss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сохранить IP"
+        app:layout_constraintTop_toBottomOf="@id/ip_ESP"
+        android:layout_marginTop="20sp"
+        android:textSize="@dimen/textSize"
+        android:textColor="#DDABF8"
+        android:backgroundTint="@color/black"
+        app:cornerRadius = "20sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/light_on_off"
+            android:layout_width="wrap_content"
+            android:layout_height="100sp"
+            android:text="Включить лампочку"
+            android:textSize="@dimen/textSize"
+            android:backgroundTint="#F1D857"
+            android:textColor="#F009466E"
+            android:layout_centerHorizontal="true"
+
+            />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvTemp"
+        android:layout_width="300sp"
+        android:layout_height="200sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="0 C"
+        android:gravity="center"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        android:textColor="#E62323"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
