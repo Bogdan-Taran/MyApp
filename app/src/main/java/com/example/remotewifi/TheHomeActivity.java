@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -25,25 +28,21 @@ public class TheHomeActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button button_room_Bogdan = findViewById(R. id. room_bogdan);
+        button_room_Bogdan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_to_bogdan_room = new Intent(TheHomeActivity.this, ActivityMyRoomBogdan.class);
+                startActivity(intent_to_bogdan_room);
+            }
+        });
+
+
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        menu.add(0, 0, 0, "Комната Богдан");
-        menu.add(1, 1, 1, "Веранда");
 
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item)
-    {
-        if(item.getItemId() == 0)
-        {
-            Intent intentRoomBogdan = new Intent(TheHomeActivity.this, ActivityMyRoomBogdan.class);
-            startActivity(intentRoomBogdan);
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 }
