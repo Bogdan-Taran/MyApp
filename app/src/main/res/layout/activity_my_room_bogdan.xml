@@ -38,9 +38,10 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/center_light"
                 android:layout_width="250sp"
                 android:gravity="center"
-                android:layout_height="wrap_content"
+                android:layout_height="50sp"
                 android:text="Центральный свет"
                 android:textSize="@dimen/text_size_names_of_rooms"
                 android:fontFamily="@font/beauty_font_rus"
@@ -50,19 +51,126 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/room_bogdan"
+                android:id="@+id/btn_on_off_center_light"
                 android:layout_width="100sp"
-                android:gravity="center"
-                android:layout_height="33dp"
-                android:layout_marginEnd="20sp"
+                android:layout_height="50sp"
                 android:layout_gravity="end"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="20sp"
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
+                android:gravity="center"
                 android:text="Вкл/выкл"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_of_number_gadgets" />
 
+            <TextView
+                android:id="@+id/rgb_lenta"
+                android:layout_width="250sp"
+                android:gravity="center"
+                android:layout_height="50sp"
+                android:text="RGB-лента"
+                android:textSize="@dimen/text_size_names_of_rooms"
+                android:fontFamily="@font/beauty_font_rus"
+                android:layout_marginStart="@dimen/margin_for_textview_in_layouts"
+                android:layout_marginTop="98sp"
+                android:background="@drawable/textview_on_click_change_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_rgb_lenta"
+                android:layout_width="100sp"
+                android:layout_height="50sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="98sp"
+                android:layout_marginEnd="20sp"
+                android:background="@drawable/button_change_color_on_off"
+                android:fontFamily="@font/beauty_font_rus"
+                android:gravity="center"
+                android:text="Вкл/выкл"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_of_number_gadgets" />
+
+            <TextView
+                android:id="@+id/louver"
+                android:layout_width="250sp"
+                android:gravity="center"
+                android:layout_height="50sp"
+                android:text="Жалюзи"
+                android:textSize="@dimen/text_size_names_of_rooms"
+                android:fontFamily="@font/beauty_font_rus"
+                android:layout_marginStart="@dimen/margin_for_textview_in_layouts"
+                android:layout_marginTop="180sp"
+                android:background="@drawable/textview_on_click_change_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_louver"
+                android:layout_width="100sp"
+                android:layout_height="50sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="180sp"
+                android:layout_marginEnd="20sp"
+                android:background="@drawable/button_change_color_on_off"
+                android:fontFamily="@font/beauty_font_rus"
+                android:gravity="center"
+                android:text="Открыть Закрыть"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_of_number_gadgets" />
+
+            <TextView
+                android:id="@+id/podsetka_stol"
+                android:layout_width="250sp"
+                android:gravity="center"
+                android:layout_height="50sp"
+                android:text="Подветка на столе"
+                android:textSize="@dimen/text_size_names_of_rooms"
+                android:fontFamily="@font/beauty_font_rus"
+                android:layout_marginStart="@dimen/margin_for_textview_in_layouts"
+                android:layout_marginTop="262sp"
+                android:background="@drawable/textview_on_click_change_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_podsetka_stol"
+                android:layout_width="100sp"
+                android:layout_height="50sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="262sp"
+                android:layout_marginEnd="20sp"
+                android:background="@drawable/button_change_color_on_off"
+                android:fontFamily="@font/beauty_font_rus"
+                android:gravity="center"
+                android:text="Вкл/выкл"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_of_number_gadgets" />
+
+            <TextView
+                android:id="@+id/svetilnik_stol"
+                android:layout_width="250sp"
+                android:gravity="center"
+                android:layout_height="50sp"
+                android:text="Подветка на столе"
+                android:textSize="@dimen/text_size_names_of_rooms"
+                android:fontFamily="@font/beauty_font_rus"
+                android:layout_marginStart="@dimen/margin_for_textview_in_layouts"
+                android:layout_marginTop="344sp"
+                android:background="@drawable/textview_on_click_change_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_svetilnik_stol"
+                android:layout_width="100sp"
+                android:layout_height="50sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="344sp"
+                android:layout_marginEnd="20sp"
+                android:background="@drawable/button_change_color_on_off"
+                android:fontFamily="@font/beauty_font_rus"
+                android:gravity="center"
+                android:text="Вкл/выкл"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_of_number_gadgets" />
 
 
         </FrameLayout>
