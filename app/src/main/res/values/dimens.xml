@@ -4,5 +4,6 @@
     <dimen name="activity_vertical_margin">16sp</dimen>
     <dimen name="text_size_names_of_activities_inTop">45sp</dimen>  //размер шрифта для верхней надписи на страницах
     <dimen name="text_size_names_of_rooms">27sp</dimen>
-    <dimen name="text_size_of_number_gadgets">15sp</dimen>
+    <dimen name="text_size_of_number_gadgets">17sp</dimen>
+    <dimen name="margin_for_textview_in_layouts">15sp</dimen>
 </resources>

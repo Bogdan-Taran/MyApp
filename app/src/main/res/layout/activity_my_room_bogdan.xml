@@ -38,18 +38,30 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="250sp"
+                android:gravity="center"
                 android:layout_height="wrap_content"
                 android:text="Центральный свет"
                 android:textSize="@dimen/text_size_names_of_rooms"
                 android:fontFamily="@font/beauty_font_rus"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/margin_for_textview_in_layouts"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/button_on_click_change_color"
-
-
-
+                android:background="@drawable/textview_on_click_change_color"
                 />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/room_bogdan"
+                android:layout_width="100sp"
+                android:gravity="center"
+                android:layout_height="33dp"
+                android:layout_marginEnd="20sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/button_change_color_on_off"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="Вкл/выкл"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_of_number_gadgets" />
 
 
 
