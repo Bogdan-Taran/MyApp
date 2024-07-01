@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Remote WiFi</string>
     <string name="button_room_bogdan">Комната Богдан</string>
+    <string name="string_for_future">Здесь планируется сделать 3 ползунка SeekBar для управления цветом RGB. Будет какое-то простанство, в котором будет показываться сумма этих трёх цветов. В дальнейщем планируется их отправлять на ESP8266 для управления RGB-лентой.</string>
 </resources>

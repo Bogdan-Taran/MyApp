@@ -150,7 +150,7 @@
                 android:layout_width="250sp"
                 android:gravity="center"
                 android:layout_height="50sp"
-                android:text="Подветка на столе"
+                android:text="Светильник"
                 android:textSize="@dimen/text_size_names_of_rooms"
                 android:fontFamily="@font/beauty_font_rus"
                 android:layout_marginStart="@dimen/margin_for_textview_in_layouts"
