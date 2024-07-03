@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun onClickListenner(): OnClickListener {
+    private fun onClickListenner(): OnClickListener {   //отправка запроса
         return OnClickListener{
             when(it.id){
                 R.id.light_on_off -> { post("led_1") }
@@ -43,21 +43,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getIP() = with(binding){
+    private fun getIP() = with(binding){    // получение ip из внутренней памяти
         val ip = pref.getString("ip", "")
         if (ip != null){
             if (ip.isNotEmpty()) ipESP.setText(ip)
         }
     }
 
-    private fun OnClickSaveIp() = with(binding){
+    private fun OnClickSaveIp() = with(binding){    // функция по нажатию кнопки сохраняется ip
         saveIpAdderss.setOnClickListener {
             if (ipESP.text.isNotEmpty()) saveIP(ipESP.text.toString())
         }
     }
 
 
-    private fun saveIP(ip: String){
+    private fun saveIP(ip: String){     // метод сохранения ip
         val editor = pref.edit()
         editor.putString("ip", ip)
         editor.apply()

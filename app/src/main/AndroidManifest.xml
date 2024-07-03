@@ -20,9 +20,11 @@
         <activity
             android:name=".RoomBogdanLouver"
             android:exported="false" />
+
         <activity
             android:name=".RoomBogdanLight"
             android:exported="false" />
+
         <activity
             android:name=".TheHomeActivity"
             android:exported="true">
@@ -32,12 +34,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ActivityMyRoomBogdan"
             android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+        <activity android:name=".ActivityRoomBogdanRGB"
+            android:exported="true"/>
 
 
     </application>
