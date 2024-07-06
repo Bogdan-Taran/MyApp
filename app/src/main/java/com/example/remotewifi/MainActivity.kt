@@ -64,8 +64,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun post(post: String){ //led_1
-        Thread{
-            request = Request.Builder().url("http://${binding.ipESP.text}/$post").build()   //запрос на МК
+        Thread{ //второстепенный поток
+            request = Request.Builder().url("http://${binding.ipESP.text}/$post").build()   // построение запроса
             try {
                 var response = client.newCall(request).execute()    //ответ от МК
                 if(response.isSuccessful){
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-        }.start()
+        }.start()   // запускаем второстепенный поток
     }
 
 
