@@ -37,7 +37,10 @@
 
         <activity
             android:name=".ActivityMyRoomBogdan"
-            android:exported="true" />
+            android:exported="true">
+
+
+        </activity>
 
         <activity
             android:name=".MainActivity"

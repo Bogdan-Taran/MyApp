@@ -1,6 +1,6 @@
 package com.example.remotewifi;
 
-import static com.example.remotewifi.R.id.btn_podsetka_stol;
+import static com.example.remotewifi.R.id.btn_podsvetka_stol;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,12 +25,14 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public class ActivityMyRoomBogdan extends AppCompatActivity {
+public class ActivityMyRoomBogdan extends AppCompatActivity  {
     private Request request;    // добавляем переменную для запросов (OkHttp3)
     ActivityTheHomeBinding binding;
     ActivityMyRoomBogdanBinding binding_btns;
     private OkHttpClient client;
-    private static final int onOffPodsvetkaStol = btn_podsetka_stol;
+    public static final int BTN_PODSVETKA_STOL_ID = R.id.btn_podsvetka_stol;
+    public static final int BTN_SVETILNIK_STOL_ID = R.id.btn_svetilnik_stol;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,22 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button podsvetkaStol = (Button) findViewById(btn_podsvetka_stol);
+        Button svetilnikStol = (Button) findViewById(R.id.btn_svetilnik_stol);
+
+        podsvetkaStol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("Podsvetka_Stol");
+            }
+        });
+        svetilnikStol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("Svetilnik_Stol");
+            }
         });
 
 
@@ -54,20 +72,12 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             }
         });
 
-        binding_btns.btnPodsetkaStol.setOnClickListener(onClickPostData());
+
 
     }
 
-    private View.OnClickListener onClickPostData() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(v.getId() == onOffPodsvetkaStol){
-                    post("podsvetkaStol");
-                }
-            }
-        };
-    }
+
+
 
 
     private void post(String post) {
