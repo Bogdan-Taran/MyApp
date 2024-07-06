@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -19,11 +20,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class TheHomeActivity extends AppCompatActivity implements View.OnClickListener {
+import com.example.remotewifi.databinding.ActivityMainBinding;
+import com.example.remotewifi.databinding.ActivityTheHomeBinding;
+
+public class TheHomeActivity extends AppCompatActivity {
     SharedPreferences pref;
-    EditText  edText;
-    ImageView icon_save_ip;
-    Button btnVeranda;
+    private EditText  edText;
+    private ImageView icon_save_ip;
+    private static final String toastShowText = "IP сохранён";
+    private Button btn_room_bogdan_intent;
+
 
     private TextLinks.Request request;
 
@@ -38,23 +44,61 @@ public class TheHomeActivity extends AppCompatActivity implements View.OnClickLi
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        pref = getSharedPreferences("MyPref", MODE_PRIVATE);
-
+        btn_room_bogdan_intent = (Button) findViewById(R. id. room_bogdan);
         edText = (EditText) findViewById(R.id.edit_text_save_ip);
-
-        btnVeranda = (Button) findViewById(R.id.veranda);
-        btnVeranda.setOnClickListener(this);
-
+        icon_save_ip = (ImageView) findViewById(R.id.image_save_ip);
+        pref = getSharedPreferences("Abrakadabra", MODE_PRIVATE);
+        OnClickSaveIp();
+        getIp();
+        intentToRoomBogdan();
     }
 
-    public void onClick(View v){
+        private void getIp(){
+            String ip = pref.getString("ip", "");
+            if(ip != null) {
+                if(!ip.isEmpty()){
+                    edText.setText(ip);
+                }
+            }
+        }
 
-        switch (v.getId()){
-            case R.id.btnVeranda:
+        private void saveIp(String ip){
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putString("ip", ip);
+            editor.apply();
+        }
 
+        private void OnClickSaveIp(){
+            icon_save_ip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!edText.getText().toString().isEmpty()) {
+                        saveIp(edText.getText().toString());
+                    };
+                    toastClickShow();
 
+                }
+            });
+        }
+        private void toastClickShow(){
+            Toast.makeText(this, toastShowText, Toast.LENGTH_SHORT).show();
+        }
+
+        private void intentToRoomBogdan(){
+        btn_room_bogdan_intent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRoomBogdan = new Intent(TheHomeActivity.this, ActivityMyRoomBogdan.class);
+                startActivity(toRoomBogdan);
+
+            }
+        });
         }
 
 
-    }
+
+
+
+
+
 }
