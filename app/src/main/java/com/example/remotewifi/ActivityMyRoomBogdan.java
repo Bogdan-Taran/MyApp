@@ -30,13 +30,10 @@ import okhttp3.Response;
 
 public class ActivityMyRoomBogdan extends AppCompatActivity {
     private Request request;    // добавляем переменную для запросов (OkHttp3)
-    ActivityTheHomeBinding binding;
-    ActivityMyRoomBogdanBinding binding_btns;
     Button podsvetka_stol;
     Button svetilnik_stol;
-    EditText editTextIP;
     SharedPreferences pref;
-
+    TextView podsvetkaStolTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +48,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
 
     podsvetka_stol = (Button) findViewById(btn_podsvetka_stol);
     svetilnik_stol = (Button) findViewById(R.id.btn_svetilnik_stol);
+    podsvetkaStolTextView = (TextView) findViewById(R. id. podsetka_stol);
 
 
         TextView trans_rgb_lenta = findViewById(R.id.rgb_lenta);
@@ -77,7 +75,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             @Override
             public void run() {     // второст. поток
                 pref = getSharedPreferences("IP_ESP", MODE_PRIVATE);
-                String ip_edText = pref.getString("ip", "");
+                String ip_edText = pref.getString("ip", "192.168.1.41");
                 OkHttpClient client = new OkHttpClient();
 
 
@@ -85,11 +83,14 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                 try {
                     Response response = client.newCall(request).execute();
                     if (response.isSuccessful()) {
+                        assert response.body() != null;
                         String resultText = response.body().string();   // это для получения данных с ESP - там могут быть датчики температуры и пр. Пока задействовать не будем
+
                     }
 
                 } catch (IOException e) {
                     e.printStackTrace();
+
                 }
 
 
