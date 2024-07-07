@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     private fun onClickListenner(): OnClickListener {   //отправка запроса
         return OnClickListener{
             when(it.id){
-                R.id.light_on_off -> { post("led_1") }
+                R.id.light_on_off -> { post("podsvetka_stol") }
             }
 
         }

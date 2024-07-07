@@ -1,11 +1,14 @@
 package com.example.remotewifi;
 
+
 import static com.example.remotewifi.R.id.btn_podsvetka_stol;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -25,13 +28,14 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public class ActivityMyRoomBogdan extends AppCompatActivity  {
+public class ActivityMyRoomBogdan extends AppCompatActivity {
     private Request request;    // добавляем переменную для запросов (OkHttp3)
     ActivityTheHomeBinding binding;
     ActivityMyRoomBogdanBinding binding_btns;
-    private OkHttpClient client;
-    public static final int BTN_PODSVETKA_STOL_ID = R.id.btn_podsvetka_stol;
-    public static final int BTN_SVETILNIK_STOL_ID = R.id.btn_svetilnik_stol;
+    Button podsvetka_stol;
+    Button svetilnik_stol;
+    EditText editTextIP;
+    SharedPreferences pref;
 
 
     @Override
@@ -45,22 +49,8 @@ public class ActivityMyRoomBogdan extends AppCompatActivity  {
             return insets;
         });
 
-        Button podsvetkaStol = (Button) findViewById(btn_podsvetka_stol);
-        Button svetilnikStol = (Button) findViewById(R.id.btn_svetilnik_stol);
-
-        podsvetkaStol.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                post("Podsvetka_Stol");
-            }
-        });
-        svetilnikStol.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                post("Svetilnik_Stol");
-            }
-        });
-
+    podsvetka_stol = (Button) findViewById(btn_podsvetka_stol);
+    svetilnik_stol = (Button) findViewById(R.id.btn_svetilnik_stol);
 
 
         TextView trans_rgb_lenta = findViewById(R.id.rgb_lenta);
@@ -72,20 +62,26 @@ public class ActivityMyRoomBogdan extends AppCompatActivity  {
             }
         });
 
+        podsvetka_stol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("podsvetka_stol");
 
+            }
+        });
 
     }
-
-
-
-
 
     private void post(String post) {
         new Thread(new Runnable() { // новый второстепенный поток
             @Override
             public void run() {     // второст. поток
+                pref = getSharedPreferences("IP_ESP", MODE_PRIVATE);
+                String ip_edText = pref.getString("ip", "");
+                OkHttpClient client = new OkHttpClient();
 
-                request = new Request.Builder().url("http://" + binding.editTextSaveIp.getText() + "/" + post).build();
+
+                request = new Request.Builder().url("http://" + ip_edText + "/" + post).build();
                 try {
                     Response response = client.newCall(request).execute();
                     if (response.isSuccessful()) {

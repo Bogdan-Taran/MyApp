@@ -31,8 +31,6 @@ public class TheHomeActivity extends AppCompatActivity {
     private Button btn_room_bogdan_intent;
 
 
-    private TextLinks.Request request;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +45,9 @@ public class TheHomeActivity extends AppCompatActivity {
         btn_room_bogdan_intent = (Button) findViewById(R. id. room_bogdan);
         edText = (EditText) findViewById(R.id.edit_text_save_ip);
         icon_save_ip = (ImageView) findViewById(R.id.image_save_ip);
-        pref = getSharedPreferences("Abrakadabra", MODE_PRIVATE);
+
+        pref = getSharedPreferences("IP_ESP", MODE_PRIVATE);
+
         OnClickSaveIp();
         getIp();
         intentToRoomBogdan();
