@@ -51,16 +51,30 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_on_off_center_light"
-                android:layout_width="100sp"
+                android:id="@+id/center_light_on"
+                android:layout_width="40sp"
                 android:layout_height="50sp"
                 android:layout_gravity="end"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginTop="16sp"
+                android:layout_marginEnd="80sp"
+                android:background="@drawable/button_change_color_on_off"
+                android:fontFamily="@font/beauty_font_rus"
+                android:gravity="center"
+                android:text="Вкл"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_of_number_gadgets" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/center_light_off"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="16sp"
                 android:layout_marginEnd="20sp"
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
                 android:gravity="center"
-                android:text="Вкл/выкл"
+                android:text="Выкл"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_of_number_gadgets" />
 
@@ -78,8 +92,22 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_rgb_lenta"
-                android:layout_width="100sp"
+                android:id="@+id/btn_rgb_lenta_on"
+                android:layout_width="40sp"
+                android:layout_height="50sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="98sp"
+                android:layout_marginEnd="80sp"
+                android:background="@drawable/button_change_color_on_off"
+                android:fontFamily="@font/beauty_font_rus"
+                android:gravity="center"
+                android:text="Вкл"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_of_number_gadgets" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_rgb_lenta_off"
+                android:layout_width="50sp"
                 android:layout_height="50sp"
                 android:layout_gravity="end"
                 android:layout_marginTop="98sp"
@@ -87,7 +115,7 @@
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
                 android:gravity="center"
-                android:text="Вкл/выкл"
+                android:text="Выкл"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_of_number_gadgets" />
 
