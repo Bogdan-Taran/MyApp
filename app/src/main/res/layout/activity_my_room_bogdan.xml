@@ -173,6 +173,7 @@
                 android:textSize="@dimen/text_size_of_number_gadgets" />
 
 
+
         </FrameLayout>
 
     </ScrollView>
