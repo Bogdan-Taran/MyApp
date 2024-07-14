@@ -149,6 +149,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
 
 
     private void post(String post) {
+
         new Thread(new Runnable() { // новый второстепенный поток
             @Override
             public void run() {     // второст. поток
@@ -167,7 +168,6 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                     }
 
                 } catch (IOException e) {
-                    e.printStackTrace();
 
                 }
 
