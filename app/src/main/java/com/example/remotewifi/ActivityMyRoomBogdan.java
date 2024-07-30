@@ -111,14 +111,24 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         btnOnRGBLenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IrMan.transmit(38000, ON);
+                if(IrMan.hasIrEmitter()){
+                    IrMan.transmit(38000, ON);
+                }else {
+                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
+                    return;
+                }
             }
         });
 
         btnOffRGBLenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IrMan.transmit(38000, Off);
+                if(IrMan.hasIrEmitter()){
+                    IrMan.transmit(38000, Off);
+                }else{
+                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
             }
         });
@@ -141,6 +151,13 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             public void onClick(View v) {
                 post("podsvetka_stol");
 
+            }
+        });
+
+        svetilnik_stol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("svetilnik_stol");
             }
         });
 
