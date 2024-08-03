@@ -38,15 +38,17 @@
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_weight="1"
-            android:background="@drawable/button_change_color_on_off_normal"
+            android:background="@drawable/gradient_for_ip_"
             android:fontFamily="@font/beauty_font_rus"
             android:gravity="center"
             android:hint="Введите IP вашего ESP"
             android:textSize="20sp"
-            android:layout_marginStart="1sp"/>
+            android:layout_marginStart="1sp"
+
+            />
 
         <ImageView
-            android:background="@drawable/button_change_color_on_off_normal"
+            android:background="@drawable/gradient_for_icon_save_ip_"
             android:id="@+id/image_save_ip"
             android:layout_width="match_parent"
             android:layout_height="50sp"
