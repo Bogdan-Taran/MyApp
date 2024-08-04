@@ -300,54 +300,7 @@
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:orientation="horizontal"
-                android:layout_marginTop="508sp"
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
-                >
 
-                <TextView
-                    android:layout_weight="10"
-                    android:layout_marginEnd="25sp"
-                    android:id="@+id/projector_Epson"
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="match_parent"
-                    android:text="Проектор Epson"
-                    android:textSize="@dimen/text_size_names_of_rooms"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:background="@drawable/textview_on_click_change_color"
-                    />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_marginEnd="15sp"
-                    android:layout_weight="5"
-                    android:id="@+id/projector_Epson_on"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@drawable/button_change_color_on_off"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:text="Вкл"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_of_number_gadgets" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_weight="4"
-                    android:id="@+id/projector_Epson_off"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_change_color_on_off"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:gravity="center"
-                    android:text="Выкл"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_of_number_gadgets" />
-
-            </LinearLayout>
 
 
 
