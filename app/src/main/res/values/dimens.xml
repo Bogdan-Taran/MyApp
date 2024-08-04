@@ -6,5 +6,4 @@
     <dimen name="text_size_names_of_rooms">27sp</dimen>
     <dimen name="text_size_of_number_gadgets">17sp</dimen>
     <dimen name="margin_for_textview_in_layouts">15sp</dimen>
-    <dimen name="text_size_on_pult_RGB">23sp</dimen>
 </resources>
