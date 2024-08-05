@@ -83,7 +83,8 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         podsvetkaStolTextView = (TextView) findViewById(R. id. podsetka_stol);
 
         IrMan = (ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE);
-
+        btnOnRGBLenta = findViewById(R.id.btn_rgb_lenta_on);
+        btnOffRGBLenta = findViewById(R.id.btn_rgb_lenta_off);
 
 
         btnOnRGBLenta.setOnClickListener(new View.OnClickListener() {
