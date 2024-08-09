@@ -34,38 +34,27 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
     private static final int[] Off = {9200,4450, 650,450, 700,450, 650,500, 650,450, 700,450, 650,500, 650,450, 700,450, 650,1600, 650,1600, 700,1600, 650,1600, 650,500, 600,1650, 650,1600, 650,1600, 700,450, 700,1550, 700,450, 650,500, 650,450, 700,450, 650,500, 650,450, 650,1600, 700,450, 650,1600, 700,1550, 700,1600, 650,1600, 650,1600, 700,1600, 650};
     //ON
     private static final int[] ON = {9250,4400, 650,500, 650,500, 600,500, 650,500, 650,500, 650,450, 650,500, 700,450, 650,1600, 650,1600, 700,1600, 600,1650, 650,500, 650,1600, 650,1600, 700,1600, 600,1650, 650,1600, 700,450, 650,500, 650,450, 700,450, 650,500, 600,500, 700,450, 650,500, 650,1600, 700,1550, 650,1650, 650,1600, 650,1600, 700,1600, 600};
-    //(1,4)
+
+    private static final int[] Center_lgth_on = {9032, 4464,  596, 1648,  592, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 1644,  596, 1644,  594, 1646,  594, 1644,  596, 1646,  594, 1646,  594, 1644,  596, 558,  572, 560,  574, 558,  574, 560,  574, 560,  572, 560,  572, 560,  572, 560,  572, 1646,  592, 1646,  594, 1644,  596, 1644,  596, 1644,  596, 1644,  594, 1646,  594, 1646,  594, 39742,  9034, 2226,  594};
+    private static final int[] Center_lght_off = {9034, 4464,  594, 1646,  594, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 560,  574, 560,  572, 560,  572, 1646,  594, 1644,  596, 1644,  596, 1644,  596, 1644,  596, 1644,  596, 1644,  596, 1646,  594, 1646,  596, 558,  574, 560,  572, 560,  574, 558,  574, 558,  574, 560,  574, 560,  574, 560,  574, 1644,  596, 1644,  596, 1644,  596, 1646,  594, 1644,  596, 1644,  596, 39734,  9032, 2222,  596};  // NEC 807FC03F
+
 
 
     private Request request;    // добавляем переменную для запросов (OkHttp3)
     Button podsvetka_stol;
     Button svetilnik_stol;
+    Button girlanda_stena;
+    Button louver;
+    Button center_light_on;
+    Button center_light_off;
+
     SharedPreferences pref;
     TextView podsvetkaStolTextView;
 
     Button btnOnRGBLenta;
     Button btnOffRGBLenta;
-    Button btnUpRGBLenta;
-    Button btnDownRGBLenta;
-    Button btnFlashRGBLenta;
-    Button btnStrobeRGBLenta;
-    Button btnFadeRGBLenta;
-    Button btnSmoothRGBLenta;
-    Button btnRedRGBLenta;
-    Button btnGreenRGBLenta;
-    Button btnBlueRGBLenta;
-    Button btnWhiteRGBLenta;
-    Button btnOrangeRGBLenta;
-    Button btnLgreenRGBLenta;
-    Button btnMblueRGBLenta;
-    Button btnMredRGBLenta;
-    Button btnSkyblueRGBLenta;
-    Button btnPurpleRGBLenta;
-    Button btnLorangeRGBLenta;
-    Button btnMMblueRGBLenta;
-    Button btnMpurpleRGBLenta;
-    Button btnYellowRGBLenta;
-    Button btnSeaBlueRGBLenta;
+
+
 
 
     @Override
@@ -81,10 +70,15 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         podsvetka_stol = (Button) findViewById(btn_podsvetka_stol);
         svetilnik_stol = (Button) findViewById(R.id.btn_svetilnik_stol);
         podsvetkaStolTextView = (TextView) findViewById(R. id. podsetka_stol);
+        girlanda_stena = (Button) findViewById(R.id.btn_girlanda_stena);
+        louver = (Button) findViewById(R.id.btn_louver);
+        center_light_on = (Button) findViewById(R.id.center_light_on);
+        center_light_off = (Button) findViewById(R.id.center_light_off);
 
         IrMan = (ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE);
         btnOnRGBLenta = findViewById(R.id.btn_rgb_lenta_on);
         btnOffRGBLenta = findViewById(R.id.btn_rgb_lenta_off);
+        TextView trans_rgb_lenta = findViewById(R.id.rgb_lenta);
 
 
         btnOnRGBLenta.setOnClickListener(new View.OnClickListener() {
@@ -111,12 +105,40 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
 
             }
         });
+        center_light_on.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(IrMan.hasIrEmitter()){
+                    IrMan.transmit(38000, Center_lgth_on);
+
+
+
+
+                }else{
+                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
+        center_light_off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(IrMan.hasIrEmitter()){
+                    IrMan.transmit(38000,Center_lght_off);
+                }else{
+                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
 
 
 
 
 
-        TextView trans_rgb_lenta = findViewById(R.id.rgb_lenta);
+
+
+
         trans_rgb_lenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,16 +151,30 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 post("podsvetka_stol");
-
             }
         });
-
         svetilnik_stol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 post("svetilnik_stol");
             }
         });
+        girlanda_stena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("girlanda_stena");
+            }
+        });
+        louver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("louver");
+            }
+        });
+
+
+
+
 
     }
 
