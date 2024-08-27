@@ -47,12 +47,17 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
     Button louver;
     Button center_light_on;
     Button center_light_off;
+    TextView btn_to_lightroom;
 
     SharedPreferences pref;
     TextView podsvetkaStolTextView;
+    TextView text_top_my_home;
 
     Button btnOnRGBLenta;
     Button btnOffRGBLenta;
+
+
+
 
 
 
@@ -74,13 +79,21 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         louver = (Button) findViewById(R.id.btn_louver);
         center_light_on = (Button) findViewById(R.id.center_light_on);
         center_light_off = (Button) findViewById(R.id.center_light_off);
+        btn_to_lightroom = (TextView) findViewById(R.id. center_light);
 
+        // ДЛЯ ИК
         IrMan = (ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE);
         btnOnRGBLenta = findViewById(R.id.btn_rgb_lenta_on);
         btnOffRGBLenta = findViewById(R.id.btn_rgb_lenta_off);
         TextView trans_rgb_lenta = findViewById(R.id.rgb_lenta);
 
+        //проверка
+        text_top_my_home = (TextView) findViewById(R.id. text_top_my_home);
 
+
+
+
+        // ИК СИГНАЛЫ
         btnOnRGBLenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +105,6 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                 }
             }
         });
-
         btnOffRGBLenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +114,6 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                     Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
             }
         });
         center_light_on.setOnClickListener(new View.OnClickListener() {
@@ -110,10 +121,6 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             public void onClick(View v) {
                 if(IrMan.hasIrEmitter()){
                     IrMan.transmit(38000, Center_lgth_on);
-
-
-
-
                 }else{
                     Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
@@ -134,11 +141,14 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
 
 
 
-
-
-
-
-
+        // ИНТЕНТЫ
+        btn_to_lightroom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_to_lightroom_place = new Intent(ActivityMyRoomBogdan.this, RoomBogdanLight.class);
+                startActivity(intent_to_lightroom_place);
+            }
+        });
         trans_rgb_lenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,6 +157,13 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             }
         });
 
+
+        Intent send_string_to_Post1 = getIntent();
+        String IR_1_1 = send_string_to_Post1.getStringExtra("IR_1");
+        post(IR_1_1);
+
+
+        // ПОСТЫ
         podsvetka_stol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

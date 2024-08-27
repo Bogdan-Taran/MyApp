@@ -5,35 +5,160 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RoomBogdanLight">
+    tools:context=".RoomBogdanLight"
+    android:background="@drawable/gradient_background_for_activities">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-
-        android:elevation="5dp"
-        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20sp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/image"
-            app:layout_constraintStart_toStartOf="@id/image"
-            app:srcCompat="@drawable/light_off" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="70sp"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/light_on" />
-    </androidx.cardview.widget.CardView>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn1"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="1"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn2"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="2"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn3"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="3"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn4"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="4"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn5"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="5"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="70sp"
+            android:orientation="horizontal"
+            android:layout_marginEnd="5sp"
+            android:layout_marginStart="5sp"
+            android:layout_marginTop="100sp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn6"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="6"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn7"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="7"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn8"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="8"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn9"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="9"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lightroom_btn10"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/gradient_for_btn_in_lightroom"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/beauty_font_rus"
+                android:text="10"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
