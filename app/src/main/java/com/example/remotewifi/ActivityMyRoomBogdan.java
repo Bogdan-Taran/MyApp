@@ -38,6 +38,9 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
     private static final int[] Center_lgth_on = {9032, 4464,  596, 1648,  592, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 1644,  596, 1644,  594, 1646,  594, 1644,  596, 1646,  594, 1646,  594, 1644,  596, 558,  572, 560,  574, 558,  574, 560,  574, 560,  572, 560,  572, 560,  572, 560,  572, 1646,  592, 1646,  594, 1644,  596, 1644,  596, 1644,  596, 1644,  594, 1646,  594, 1646,  594, 39742,  9034, 2226,  594};
     private static final int[] Center_lght_off = {9034, 4464,  594, 1646,  594, 560,  572, 560,  572, 560,  572, 560,  572, 560,  572, 560,  574, 560,  572, 560,  572, 1646,  594, 1644,  596, 1644,  596, 1644,  596, 1644,  596, 1644,  596, 1644,  596, 1646,  594, 1646,  596, 558,  574, 560,  572, 560,  574, 558,  574, 558,  574, 560,  574, 560,  574, 560,  574, 1644,  596, 1644,  596, 1644,  596, 1646,  594, 1644,  596, 1644,  596, 39734,  9032, 2222,  596};  // NEC 807FC03F
 
+    private static final int[] IRprojector_Epson_on = {972, 390,  290, 942,  296, 388,  292, 392,  290, 684,  290, 392,  290, 1198,  298, 388,  290, 392,  290, 940,  298, 678,  290, 684,  290, 682,  292, 682,  292, 684,  290, 392,  292, 392,  290, 392,  290, 392,  290, 392,  290, 682,  290, 940,  294, 938,  294, 390,  290};  // UNKNOWN 4554CC01
+    private static final int[] IRprojector_Epson_off = {972, 390,  290, 942,  296, 388,  292, 392,  290, 684,  290, 392,  290, 1198,  298, 388,  290, 392,  290, 940,  298, 678,  290, 684,  290, 682,  292, 682,  292, 684,  290, 392,  292, 392,  290, 392,  290, 392,  290, 392,  290, 682,  290, 940,  294, 938,  294, 390,  290};  // UNKNOWN 4554CC01
+
 
 
     private Request request;    // добавляем переменную для запросов (OkHttp3)
@@ -48,6 +51,8 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
     Button center_light_on;
     Button center_light_off;
     TextView btn_to_lightroom;
+    Button projector_Epson_on;
+    Button projector_Epson_off;
 
     SharedPreferences pref;
     TextView podsvetkaStolTextView;
@@ -80,6 +85,8 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         center_light_on = (Button) findViewById(R.id.center_light_on);
         center_light_off = (Button) findViewById(R.id.center_light_off);
         btn_to_lightroom = (TextView) findViewById(R.id. center_light);
+        projector_Epson_on = (Button) findViewById(R.id. projector_Epson_on);
+        projector_Epson_off = (Button) findViewById(R.id. projector_Epson_off);
 
         // ДЛЯ ИК
         IrMan = (ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE);
@@ -103,6 +110,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                     Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                post("RGB_on");
             }
         });
         btnOffRGBLenta.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +122,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                     Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                post("RGB_off");
             }
         });
         center_light_on.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +134,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                     Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                post("IR_center_light_on");
             }
         });
         center_light_off.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +146,32 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                     Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                post("IR_center_light_off");
+            }
+        });
+        projector_Epson_on.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(IrMan.hasIrEmitter()){
+                    IrMan.transmit(38000,IRprojector_Epson_on);
+                }else{
+                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                post("projector_Epson_on");
+            }
+        });
+        projector_Epson_off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(IrMan.hasIrEmitter()){
+                    IrMan.transmit(38000,IRprojector_Epson_off);
+                }else{
+                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                post("projector_Epson_off");
+
             }
         });
 
