@@ -158,9 +158,26 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         });
 
 
-        Intent send_string_to_Post1 = getIntent();
-        String IR_1_1 = send_string_to_Post1.getStringExtra("IR_1");
+        //Принимаем строчки из активити главного света
+        //Intent send_string_to_Post1 = getIntent();
+        String IR_1_1 = getIntent().getStringExtra("IR_1");
         post(IR_1_1);
+
+        String IR_2_2 = getIntent().getStringExtra("IR_2");
+        post(IR_2_2);
+
+        String IR_3_3 = getIntent().getStringExtra("IR_3");
+        post(IR_3_3);
+
+        String IR_4_4 = getIntent().getStringExtra("IR_4");
+        post(IR_4_4);
+
+        String IR_5_5 = getIntent().getStringExtra("IR_5");
+        post(IR_5_5);
+
+
+
+
 
 
         // ПОСТЫ

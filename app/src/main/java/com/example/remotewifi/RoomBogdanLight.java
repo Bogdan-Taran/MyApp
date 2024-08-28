@@ -19,6 +19,7 @@ public class RoomBogdanLight extends AppCompatActivity {
     Button lightroom_btn4;
     Button lightroom_btn5;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,14 +40,54 @@ public class RoomBogdanLight extends AppCompatActivity {
 
 
 
-        // передаём строчку в другую активити
+        // передаём строчки в другую активити
         lightroom_btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String Light_on = "IR_center_light_on";
                 Intent send_string_to_Post1 = new Intent(RoomBogdanLight.this, ActivityMyRoomBogdan.class);
-                send_string_to_Post1.putExtra("IR_1", "IR_center_light");
+                send_string_to_Post1.putExtra("IR_1", Light_on);
+                startActivity(send_string_to_Post1);
             }
         });
+        lightroom_btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String Light_off = "IR_center_light_off";
+                Intent send_string_to_Post2 = new Intent(RoomBogdanLight.this, ActivityMyRoomBogdan.class);
+                send_string_to_Post2.putExtra("IR_2", Light_off);
+                startActivity(send_string_to_Post2);
+            }
+        });
+        lightroom_btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String RGB_on = "RGB_on";
+                Intent send_string_to_Post3 = new Intent(RoomBogdanLight.this, ActivityMyRoomBogdan.class);
+                send_string_to_Post3.putExtra("IR_3", RGB_on);
+                startActivity(send_string_to_Post3);
+            }
+        });
+        lightroom_btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String RGB_off = "RGB_off";
+                Intent send_string_to_Post4 = new Intent(RoomBogdanLight.this, ActivityMyRoomBogdan.class);
+                send_string_to_Post4.putExtra("IR_4", RGB_off);
+                startActivity(send_string_to_Post4);
+            }
+        });
+        lightroom_btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String RGB_fade = "RGB_fade";
+                Intent send_string_to_Post5 = new Intent(RoomBogdanLight.this, ActivityMyRoomBogdan.class);
+                send_string_to_Post5.putExtra("IR_5", RGB_fade);
+                startActivity(send_string_to_Post5);
+            }
+        });
+
+
 
 
     }
