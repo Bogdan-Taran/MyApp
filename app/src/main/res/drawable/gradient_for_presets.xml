@@ -4,18 +4,15 @@
         <shape
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
-
             <gradient
                 android:type="linear"
-                android:startColor="#EBE2E8EA"
-                android:endColor="#F5FFFFFF"
-                android:angle="90"/>
-
-
+                android:startColor="#D2F6316F"
+                android:endColor="#BAF3D513"
+                android:angle="45"
+                />
             <corners
-                android:radius="25dp"   >
+                android:radius="15sp">
             </corners>
-
         </shape>
     </item>
 
@@ -23,18 +20,18 @@
         <shape
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
-
             <gradient
                 android:type="linear"
-                android:startColor="#FFF1BB"
-                android:endColor="#F8D2F8"
-                android:angle="135"/>
-
-
+                android:startColor="#DF1252"
+                android:endColor="#CDB308"
+                android:angle="45"
+                />
             <corners
-                android:radius="25dp"   >
+                android:radius="15sp">
             </corners>
-
+            <stroke
+                android:width="2sp"
+                android:color="#A2BEDF"/>
         </shape>
 
 

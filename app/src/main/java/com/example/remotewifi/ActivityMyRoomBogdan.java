@@ -95,7 +95,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         TextView trans_rgb_lenta = findViewById(R.id.rgb_lenta);
 
         //проверка
-        text_top_my_home = (TextView) findViewById(R.id. text_top_my_home);
+        text_top_my_home = (TextView) findViewById(R.id. text_top_my_room);
 
 
 
@@ -178,13 +178,15 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
 
 
         // ИНТЕНТЫ
-        btn_to_lightroom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent_to_lightroom_place = new Intent(ActivityMyRoomBogdan.this, RoomBogdanLight.class);
-                startActivity(intent_to_lightroom_place);
-            }
-        });
+
+//        btn_to_lightroom.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent_to_lightroom_place = new Intent(ActivityMyRoomBogdan.this, RoomBogdanLight.class);
+//                startActivity(intent_to_lightroom_place);
+//            }
+//        });
+
         trans_rgb_lenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,23 +195,48 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             }
         });
 
+        TextView btn_to_presets = findViewById(R.id.btn_to_presets);
+        btn_to_presets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_to_presets = new Intent(ActivityMyRoomBogdan.this, PresetActivity.class);
+                startActivity(intent_to_presets);
+            }
+        });
+
+        //Принимаем интенты пресетов
+
+        String TurnAllLight = getIntent().getStringExtra("TurnAllLight");
+        post(TurnAllLight);
+
+        String TurnPodsvStol = getIntent().getStringExtra("TurnPodsvStol");
+        post(TurnPodsvStol);
+
+        String EndFilm = getIntent().getStringExtra("EndFilm");
+        post(EndFilm);
+
+        String EverythOff = getIntent().getStringExtra("EverythOff");
+        post(EverythOff);
+
+
+
 
         //Принимаем строчки из активити главного света
         //Intent send_string_to_Post1 = getIntent();
-        String IR_1_1 = getIntent().getStringExtra("IR_1");
-        post(IR_1_1);
-
-        String IR_2_2 = getIntent().getStringExtra("IR_2");
-        post(IR_2_2);
-
-        String IR_3_3 = getIntent().getStringExtra("IR_3");
-        post(IR_3_3);
-
-        String IR_4_4 = getIntent().getStringExtra("IR_4");
-        post(IR_4_4);
-
-        String IR_5_5 = getIntent().getStringExtra("IR_5");
-        post(IR_5_5);
+//        String IR_1_1 = getIntent().getStringExtra("IR_1");
+//        post(IR_1_1);
+//
+//        String IR_2_2 = getIntent().getStringExtra("IR_2");
+//        post(IR_2_2);
+//
+//        String IR_3_3 = getIntent().getStringExtra("IR_3");
+//        post(IR_3_3);
+//
+//        String IR_4_4 = getIntent().getStringExtra("IR_4");
+//        post(IR_4_4);
+//
+//        String IR_5_5 = getIntent().getStringExtra("IR_5");
+//        post(IR_5_5);
 
 
 
@@ -238,7 +265,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         louver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                post("louver");
+                post("empty");
             }
         });
 

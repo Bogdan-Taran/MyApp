@@ -7,4 +7,6 @@
     <dimen name="text_size_of_number_gadgets">17sp</dimen>
     <dimen name="margin_for_textview_in_layouts">15sp</dimen>
     <dimen name="text_size_on_pult_RGB">23sp</dimen>
+    <dimen name="text_size_in_presets">29sp</dimen>
+    <dimen name="textSize_main_activity">30sp</dimen>
 </resources>

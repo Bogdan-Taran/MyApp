@@ -140,6 +140,7 @@ public class ActivityRoomBogdanRGB extends AppCompatActivity {
                     Toast.makeText(ActivityRoomBogdanRGB.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
             }
         });
 
@@ -347,6 +348,21 @@ public class ActivityRoomBogdanRGB extends AppCompatActivity {
                 }
             }
         });
+
+        Button lpurple = findViewById(R.id. lpurple_btn_on_pult_rgb);
+        lpurple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(IrMan.hasIrEmitter()){
+                    IrMan.transmit(38000, Lpurple);
+                }else {
+                    Toast.makeText(ActivityRoomBogdanRGB.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
+
+
         Button btnSeaBlueRGBLenta = findViewById(R.id.seablue_btn_on_pult_rgb);
         btnSeaBlueRGBLenta.setOnClickListener(new View.OnClickListener() {
             @Override
