@@ -206,8 +206,11 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
 
         //Принимаем интенты пресетов
 
-        String TurnAllLight = getIntent().getStringExtra("TurnAllLight");
-        post(TurnAllLight);
+        String TurnOnAllLight = getIntent().getStringExtra("TurnOnAllLight");
+        post(TurnOnAllLight);
+
+        String TurnOffAllLight = getIntent().getStringExtra("TurnOffAllLight");
+        post(TurnOffAllLight);
 
         String TurnPodsvStol = getIntent().getStringExtra("TurnPodsvStol");
         post(TurnPodsvStol);

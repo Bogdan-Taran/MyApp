@@ -24,19 +24,29 @@ public class PresetActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button btn_turn_all_light = findViewById(R.id.btn_turn_all_light);
+        Button btn_turn_on_all_light = findViewById(R.id.btn_turn_on_all_light);
+        Button btn_turn_off_all_light = findViewById(R.id.btn_turn_off_all_light);
         Button btn_turn_all_podsvetka_stol = findViewById(R.id.btn_turn_all_podsvetka_stol);
         Button btn_end_of_the_film = findViewById(R.id.btn_end_of_the_film);
         Button btn_turn_everything_off = findViewById(R.id.btn_turn_everything_off);
 
         //Интенты
-        btn_turn_all_light.setOnClickListener(new View.OnClickListener() {
+        btn_turn_on_all_light.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String TurnAllLight = "btn_turn_all_light";
-                Intent intentTurnAllLight = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
-                intentTurnAllLight.putExtra("TurnAllLight", TurnAllLight);
-                startActivity(intentTurnAllLight);
+                String TurnOnAllLight = "btn_turn_on_all_light";
+                Intent intentTurnOnAllLight = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
+                intentTurnOnAllLight.putExtra("TurnOnAllLight", TurnOnAllLight);
+                startActivity(intentTurnOnAllLight);
+            }
+        });
+        btn_turn_off_all_light.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String TurnOffAllLight = "btn_turn_off_all_light";
+                Intent intentTurnOffAllLight = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
+                intentTurnOffAllLight.putExtra("TurnOffAllLight", TurnOffAllLight);
+                startActivity(intentTurnOffAllLight);
             }
         });
 
