@@ -104,13 +104,14 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         btnOnRGBLenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                post("RGB_on");
                 if(IrMan.hasIrEmitter()){
                     IrMan.transmit(38000, ON);
                 }else {
                     Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                post("RGB_on");
+
             }
         });
         btnOffRGBLenta.setOnClickListener(new View.OnClickListener() {
@@ -212,8 +213,11 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         String TurnOffAllLight = getIntent().getStringExtra("TurnOffAllLight");
         post(TurnOffAllLight);
 
-        String TurnPodsvStol = getIntent().getStringExtra("TurnPodsvStol");
-        post(TurnPodsvStol);
+        String TurnOnPodsvStol = getIntent().getStringExtra("TurnOnPodsvStol");
+        post(TurnOnPodsvStol);
+
+        String TurnOffPodsvStol = getIntent().getStringExtra("TurnOffPodsvStol");
+        post(TurnOffPodsvStol);
 
         String EndFilm = getIntent().getStringExtra("EndFilm");
         post(EndFilm);

@@ -62,9 +62,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,8 +77,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/room_bogdan"
-                android:layout_width="150sp"
-                android:layout_height="100sp"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:background="@drawable/button_on_click_change_color"
@@ -91,8 +91,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/veranda"
-                android:layout_width="150sp"
-                android:layout_height="100sp"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_gravity="end"
                 android:background="@drawable/button_on_click_change_color"

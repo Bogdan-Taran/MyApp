@@ -26,7 +26,8 @@ public class PresetActivity extends AppCompatActivity {
 
         Button btn_turn_on_all_light = findViewById(R.id.btn_turn_on_all_light);
         Button btn_turn_off_all_light = findViewById(R.id.btn_turn_off_all_light);
-        Button btn_turn_all_podsvetka_stol = findViewById(R.id.btn_turn_all_podsvetka_stol);
+        Button btn_turn_on_all_podsvetka_stol = findViewById(R.id.btn_turn_on_all_podsvetka_stol);
+        Button btn_turn_off_all_podsvetka_stol = findViewById(R.id.btn_turn_off_all_podsvetka_stol);
         Button btn_end_of_the_film = findViewById(R.id.btn_end_of_the_film);
         Button btn_turn_everything_off = findViewById(R.id.btn_turn_everything_off);
 
@@ -50,15 +51,28 @@ public class PresetActivity extends AppCompatActivity {
             }
         });
 
-        btn_turn_all_podsvetka_stol.setOnClickListener(new View.OnClickListener() {
+
+        btn_turn_on_all_podsvetka_stol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String TurnPodsvStol = "btn_turn_all_podsvetka_stol";
-                Intent intentTurnPodsvStol = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
-                intentTurnPodsvStol.putExtra("TurnPodsvStol", TurnPodsvStol);
-                startActivity(intentTurnPodsvStol);
+                String TurnOnPodsvStol = "btn_turn_on_all_podsvetka_stol";
+                Intent intentTurnOnPodsvStol = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
+                intentTurnOnPodsvStol.putExtra("TurnOnPodsvStol", TurnOnPodsvStol);
+                startActivity(intentTurnOnPodsvStol);
             }
         });
+
+        btn_turn_off_all_podsvetka_stol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String TurnOffPodsvStol = "btn_turn_off_all_podsvetka_stol";
+                Intent intentTurnOffPodsvStol = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
+                intentTurnOffPodsvStol.putExtra("TurnOffPodsvStol", TurnOffPodsvStol);
+                startActivity(intentTurnOffPodsvStol);
+            }
+        });
+
+
 
         btn_end_of_the_film.setOnClickListener(new View.OnClickListener() {
             @Override
