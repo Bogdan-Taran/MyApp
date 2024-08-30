@@ -1,12 +1,12 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">30sp</dimen>
-    <dimen name="activity_vertical_margin">16sp</dimen>
-    <dimen name="text_size_names_of_activities_inTop">45sp</dimen>  //размер шрифта для верхней надписи на страницах
-    <dimen name="text_size_names_of_rooms">27sp</dimen>
-    <dimen name="text_size_of_number_gadgets">17sp</dimen>
-    <dimen name="margin_for_textview_in_layouts">15sp</dimen>
-    <dimen name="text_size_on_pult_RGB">23sp</dimen>
-    <dimen name="text_size_in_presets">29sp</dimen>
-    <dimen name="textSize_main_activity">30sp</dimen>
+    <dimen name="activity_horizontal_margin">30dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_size_names_of_activities_inTop">45dp</dimen>  //размер шрифта для верхней надписи на страницах
+    <dimen name="text_size_names_of_rooms">27dp</dimen>
+    <dimen name="text_size_of_number_gadgets">17dp</dimen>
+    <dimen name="margin_for_textview_in_layouts">15dp</dimen>
+    <dimen name="text_size_on_pult_RGB">23dp</dimen>
+    <dimen name="text_size_in_presets">29dp</dimen>
+    <dimen name="textSize_main_activity">30dp</dimen>
 </resources>

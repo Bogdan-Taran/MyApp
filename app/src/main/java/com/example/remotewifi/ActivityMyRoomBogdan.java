@@ -108,7 +108,6 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                 if(IrMan.hasIrEmitter()){
                     IrMan.transmit(38000, ON);
                 }else {
-                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -117,37 +116,37 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         btnOffRGBLenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                post("RGB_off");
                 if(IrMan.hasIrEmitter()){
                     IrMan.transmit(38000, Off);
                 }else{
-                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                post("RGB_off");
+
             }
         });
         center_light_on.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                post("IR_center_light_on");
                 if(IrMan.hasIrEmitter()){
                     IrMan.transmit(38000, Center_lgth_on);
                 }else{
-                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                post("IR_center_light_on");
+
             }
         });
         center_light_off.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                post("IR_center_light_off");
                 if(IrMan.hasIrEmitter()){
                     IrMan.transmit(38000,Center_lght_off);
                 }else{
-                    Toast.makeText(ActivityMyRoomBogdan.this, "Эхх, у вас нет ИК передатчика", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                post("IR_center_light_off");
+
             }
         });
         projector_Epson_on.setOnClickListener(new View.OnClickListener() {

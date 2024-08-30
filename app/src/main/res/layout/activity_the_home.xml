@@ -36,14 +36,14 @@
         <EditText
             android:id="@+id/edit_text_save_ip"
             android:layout_width="match_parent"
-            android:layout_height="50sp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/gradient_for_ip_"
             android:fontFamily="@font/beauty_font_rus"
             android:gravity="center"
-            android:hint="Введите IP вашего ESP"
-            android:textSize="20sp"
-            android:layout_marginStart="1sp"
+            android:hint="Введите IP вашего Edp"
+            android:textSize="20dp"
+            android:layout_marginStart="1dp"
 
             />
 
@@ -51,7 +51,7 @@
             android:background="@drawable/gradient_for_icon_save_ip_"
             android:id="@+id/image_save_ip"
             android:layout_width="match_parent"
-            android:layout_height="50sp"
+            android:layout_height="50dp"
             android:layout_weight="6"
             app:srcCompat="@drawable/save_icon"
             />
@@ -105,10 +105,10 @@
             <androidx.appcompat.widget.AppCompatButton
 
                 android:id="@+id/banya"
-                android:layout_width="150sp"
-                android:layout_height="100sp"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="132sp"
+                android:layout_marginTop="132dp"
                 android:background="@drawable/button_on_click_change_color"
                 android:fontFamily="@font/beauty_font_rus"
                 android:text="Баня"
@@ -119,9 +119,9 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sarayka_bogdan"
-                android:layout_width="150sp"
-                android:layout_height="100sp"
-                android:layout_marginTop="132sp"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="132dp"
                 android:layout_gravity="end"
                 android:background="@drawable/button_on_click_change_color"
                 android:fontFamily="@font/beauty_font_rus"
@@ -133,10 +133,10 @@
             <androidx.appcompat.widget.AppCompatButton
 
                 android:id="@+id/kuhnya"
-                android:layout_width="150sp"
-                android:layout_height="100sp"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="248sp"
+                android:layout_marginTop="248dp"
                 android:background="@drawable/button_on_click_change_color"
                 android:fontFamily="@font/beauty_font_rus"
                 android:text="Кухня"

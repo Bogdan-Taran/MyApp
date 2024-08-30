@@ -24,10 +24,11 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="1dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_top_my_room">
@@ -39,16 +40,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
+                android:layout_height="55dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="16sp"
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
                 >
 
             <TextView
                 android:layout_weight="10"
-                android:layout_marginEnd="25sp"
+                android:layout_marginEnd="25dp"
                 android:id="@+id/center_light"
                 android:layout_width="match_parent"
                 android:gravity="center"
@@ -60,7 +61,7 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_marginEnd="15sp"
+                android:layout_marginEnd="15dp"
                 android:layout_weight="5"
                 android:id="@+id/center_light_on"
                 android:layout_width="wrap_content"
@@ -89,18 +90,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="98sp"
+                android:layout_marginTop="98dp"
 
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
                 >
 
 
                 <TextView
                     android:layout_weight="10"
-                    android:layout_marginEnd="25sp"
+                    android:layout_marginEnd="25dp"
                     android:id="@+id/rgb_lenta"
                     android:layout_width="match_parent"
                     android:gravity="center"
@@ -114,7 +115,7 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_marginEnd="15sp"
+                    android:layout_marginEnd="15dp"
                     android:layout_weight="5"
                     android:id="@+id/btn_rgb_lenta_on"
                     android:layout_width="wrap_content"
@@ -143,18 +144,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="180sp"
+                android:layout_marginTop="180dp"
 
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
                 >
 
 
                 <TextView
                     android:layout_weight="10"
-                    android:layout_marginEnd="25sp"
+                    android:layout_marginEnd="25dp"
                     android:id="@+id/louver"
                     android:layout_width="match_parent"
                     android:gravity="center"
@@ -185,17 +186,17 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="262sp"
+                android:layout_marginTop="262dp"
 
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
                 >
 
                 <TextView
                     android:layout_weight="15"
-                    android:layout_marginEnd="20sp"
+                    android:layout_marginEnd="20dp"
                     android:id="@+id/podsetka_stol"
                     android:layout_width="match_parent"
                     android:gravity="center"
@@ -222,18 +223,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="344sp"
+                android:layout_marginTop="344dp"
 
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
                 >
 
 
                 <TextView
                     android:layout_weight="15"
-                    android:layout_marginEnd="20sp"
+                    android:layout_marginEnd="20dp"
                     android:id="@+id/svetilnik_stol"
                     android:layout_width="match_parent"
                     android:gravity="center"
@@ -262,18 +263,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="426sp"
+                android:layout_marginTop="426dp"
 
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
                 >
 
 
                 <TextView
                     android:layout_weight="15"
-                    android:layout_marginEnd="20sp"
+                    android:layout_marginEnd="20dp"
                     android:id="@+id/girlanda_stena"
                     android:layout_width="match_parent"
                     android:gravity="center"
@@ -301,16 +302,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
+                android:layout_height="55dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="508sp"
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
+                android:layout_marginTop="508dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
                 >
 
                 <TextView
                     android:layout_weight="10"
-                    android:layout_marginEnd="25sp"
+                    android:layout_marginEnd="25dp"
                     android:id="@+id/projector_Epson"
                     android:layout_width="match_parent"
                     android:gravity="center"
@@ -322,7 +323,7 @@
                     />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_marginEnd="15sp"
+                    android:layout_marginEnd="15dp"
                     android:layout_weight="5"
                     android:id="@+id/projector_Epson_on"
                     android:layout_width="wrap_content"
@@ -349,11 +350,11 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="590sp"
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="20sp"
+                android:layout_marginTop="590dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
                 >
 
                 <TextView
@@ -365,7 +366,7 @@
                     android:gravity="center"
                     android:text="Пресеты"
                     android:fontFamily="@font/beauty_font_rus"
-                    android:textSize="40sp"
+                    android:textSize="40dp"
                     android:background="@drawable/preset_gradient"
                     />
 
