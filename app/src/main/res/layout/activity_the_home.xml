@@ -34,6 +34,7 @@
         >
 
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/edit_text_save_ip"
             android:layout_width="match_parent"
             android:layout_height="50dp"

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "388985159395",
+    "project_id": "databaseforpsw",
+    "storage_bucket": "databaseforpsw.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388985159395:android:a5cbce9978783512b0cfd6",
+        "android_client_info": {
+          "package_name": "com.example.remotewifi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAjw-vp3TZwSgquKO6kPNqETpR1XYPMmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
