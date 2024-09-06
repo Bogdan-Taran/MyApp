@@ -8,19 +8,36 @@
     android:background="@drawable/gradient_background_for_activities"
     tools:context=".TheHomeActivity">
 
+    <LinearLayout
+        android:id="@+id/textImg_top_my_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
     <TextView
         android:id="@+id/text_top_my_room"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="@drawable/border_under_textview_"
         android:fontFamily="@font/beauty_font_rus"
         android:gravity="center"
         android:text="@string/button_room_bogdan"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_names_of_activities_inTop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@drawable/baseline_home_24"
+            />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,7 +48,7 @@
         android:layout_marginBottom="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_top_my_room">
+        app:layout_constraintTop_toBottomOf="@id/textImg_top_my_home">
 
 
         <FrameLayout
