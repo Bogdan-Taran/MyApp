@@ -1,5 +1,6 @@
 package com.example.remotewifi;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.hardware.ConsumerIrManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -77,6 +79,31 @@ public class ActivityRoomBogdanRGB extends AppCompatActivity {
         });
         IrMan = (ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE);
         Button btnOnRGBLenta = findViewById(R.id.on_btn_on_pult_rgb);
+
+        //Интенты
+
+        ImageButton btn_backspace = (ImageButton) findViewById(R.id.btn_backspace);
+        btn_backspace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_back = new Intent(ActivityRoomBogdanRGB.this, ActivityMyRoomBogdan.class);
+                startActivity(intent_back);finish();
+
+            }
+        });
+
+        ImageButton btn_home = (ImageButton) findViewById(R.id.btn_home);
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_home = new Intent(ActivityRoomBogdanRGB.this, TheHomeActivity.class);
+                startActivity(intent_home);finish();
+
+            }
+        });
+
+
+
 
         btnOnRGBLenta.setOnClickListener(new View.OnClickListener() {
             @Override

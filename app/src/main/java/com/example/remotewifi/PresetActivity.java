@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,7 +39,7 @@ public class PresetActivity extends AppCompatActivity {
                 String TurnOnAllLight = "btn_turn_on_all_light";
                 Intent intentTurnOnAllLight = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
                 intentTurnOnAllLight.putExtra("TurnOnAllLight", TurnOnAllLight);
-                startActivity(intentTurnOnAllLight);
+                startActivity(intentTurnOnAllLight);finish();
             }
         });
         btn_turn_off_all_light.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +48,7 @@ public class PresetActivity extends AppCompatActivity {
                 String TurnOffAllLight = "btn_turn_off_all_light";
                 Intent intentTurnOffAllLight = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
                 intentTurnOffAllLight.putExtra("TurnOffAllLight", TurnOffAllLight);
-                startActivity(intentTurnOffAllLight);
+                startActivity(intentTurnOffAllLight);finish();
             }
         });
 
@@ -58,7 +59,7 @@ public class PresetActivity extends AppCompatActivity {
                 String TurnOnPodsvStol = "btn_turn_on_all_podsvetka_stol";
                 Intent intentTurnOnPodsvStol = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
                 intentTurnOnPodsvStol.putExtra("TurnOnPodsvStol", TurnOnPodsvStol);
-                startActivity(intentTurnOnPodsvStol);
+                startActivity(intentTurnOnPodsvStol);finish();
             }
         });
 
@@ -68,7 +69,7 @@ public class PresetActivity extends AppCompatActivity {
                 String TurnOffPodsvStol = "btn_turn_off_all_podsvetka_stol";
                 Intent intentTurnOffPodsvStol = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
                 intentTurnOffPodsvStol.putExtra("TurnOffPodsvStol", TurnOffPodsvStol);
-                startActivity(intentTurnOffPodsvStol);
+                startActivity(intentTurnOffPodsvStol);finish();
             }
         });
 
@@ -80,7 +81,7 @@ public class PresetActivity extends AppCompatActivity {
                 String EndFilm = "btn_end_of_the_film";
                 Intent intentEndFilm = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
                 intentEndFilm.putExtra("EndFilm", EndFilm);
-                startActivity(intentEndFilm);
+                startActivity(intentEndFilm);finish();
             }
         });
 
@@ -90,11 +91,27 @@ public class PresetActivity extends AppCompatActivity {
                 String EverythOff = "btn_turn_everything_off";
                 Intent intentEverythOff = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
                 intentEverythOff.putExtra("EverythOff", EverythOff);
-                startActivity(intentEverythOff);
+                startActivity(intentEverythOff);finish();
             }
         });
 
+        ImageButton btn_backdpace = (ImageButton) findViewById(R.id.btn_backdpace);
+        btn_backdpace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_back = new Intent(PresetActivity.this, ActivityMyRoomBogdan.class);
+                startActivity(intent_back);finish();
+            }
+        });
 
+        ImageButton btn_home = (ImageButton) findViewById(R.id.btn_home);
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_home = new Intent(PresetActivity.this, TheHomeActivity.class);
+                startActivity(intent_home);finish();
+            }
+        });
 
     }
 }

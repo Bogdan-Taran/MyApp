@@ -8,19 +8,45 @@
     tools:context=".PresetActivity"
     android:background="@drawable/gradient_background_for_activities">
 
-    <TextView
-        android:id="@+id/text_top_presets"
+    <LinearLayout
+        android:id="@+id/textImg_top_room_preset"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border_under_textview_"
-        android:fontFamily="@font/beauty_font_rus"
-        android:gravity="center"
-        android:text="Пресеты"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_names_of_activities_inTop"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/border_under_textview_">
+
+        <ImageButton
+            android:backgroundTint="#9FB900C6"
+            android:id="@+id/btn_backdpace"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_keyboard_backspace_24"
+            android:layout_weight="6"
+            />
+        <TextView
+            android:id="@+id/text_top_my_room_rgb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/beauty_font_rus"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="ПРЕСЕТЫ"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_names_of_activities_inTop" />
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:backgroundTint="#9FB900C6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:src="@drawable/baseline_home_24" />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,7 +56,7 @@
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_top_presets">
+        app:layout_constraintTop_toBottomOf="@+id/textImg_top_room_preset">
 
         <FrameLayout
             android:layout_width="match_parent"

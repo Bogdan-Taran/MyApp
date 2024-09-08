@@ -11,31 +11,40 @@
     <LinearLayout
         android:id="@+id/textImg_top_my_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/border_under_textview_">
 
-    <TextView
-        android:id="@+id/text_top_my_room"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/border_under_textview_"
-        android:fontFamily="@font/beauty_font_rus"
-        android:gravity="center"
-        android:text="@string/button_room_bogdan"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_names_of_activities_inTop"
-        />
-
-        <ImageView
+        <ImageButton
+            android:backgroundTint="#9FB900C6"
+            android:id="@+id/btn_backspace"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:background="@drawable/baseline_home_24"
+            android:src="@drawable/baseline_keyboard_backspace_24"
+            android:layout_weight="6"
             />
+        <TextView
+            android:id="@+id/text_top_my_room"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/beauty_font_rus"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/button_room_bogdan"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_names_of_activities_inTop" />
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:backgroundTint="#9FB900C6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:src="@drawable/baseline_home_24" />
 
     </LinearLayout>
 
@@ -58,86 +67,30 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:orientation="horizontal"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="20dp"
-                >
-
-            <TextView
-                android:layout_weight="10"
-                android:layout_marginEnd="25dp"
-                android:id="@+id/center_light"
-                android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_height="match_parent"
-                android:text="Центральный свет"
-                android:textSize="@dimen/text_size_names_of_rooms"
-                android:fontFamily="@font/beauty_font_rus"
-                android:background="@drawable/textview_on_click_change_color"
-                />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_marginEnd="15dp"
-                android:layout_weight="5"
-                android:id="@+id/center_light_on"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/button_change_color_on_off"
-                android:fontFamily="@font/beauty_font_rus"
-                android:text="Вкл"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_of_number_gadgets" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_weight="4"
-                android:id="@+id/center_light_off"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/button_change_color_on_off"
-                android:fontFamily="@font/beauty_font_rus"
-                android:gravity="center"
-                android:text="Выкл"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_of_number_gadgets" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="98dp"
-
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="20dp"
-                >
-
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="10"
-                    android:layout_marginEnd="25dp"
-                    android:id="@+id/rgb_lenta"
+                    android:id="@+id/center_light"
                     android:layout_width="match_parent"
-                    android:gravity="center"
                     android:layout_height="match_parent"
-                    android:text="RGB-лента"
-                    android:textSize="@dimen/text_size_names_of_rooms"
-                    android:fontFamily="@font/beauty_font_rus"
+                    android:layout_marginEnd="25dp"
+                    android:layout_weight="10"
                     android:background="@drawable/textview_on_click_change_color"
-                    />
-
-
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:gravity="center"
+                    android:text="Центральный свет"
+                    android:textSize="@dimen/text_size_names_of_rooms" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_marginEnd="15dp"
-                    android:layout_weight="5"
-                    android:id="@+id/btn_rgb_lenta_on"
+                    android:id="@+id/center_light_on"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="5"
                     android:background="@drawable/button_change_color_on_off"
                     android:fontFamily="@font/beauty_font_rus"
                     android:text="Вкл"
@@ -145,10 +98,10 @@
                     android:textSize="@dimen/text_size_of_number_gadgets" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_weight="4"
-                    android:id="@+id/btn_rgb_lenta_off"
+                    android:id="@+id/center_light_off"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="4"
                     android:background="@drawable/button_change_color_on_off"
                     android:fontFamily="@font/beauty_font_rus"
                     android:gravity="center"
@@ -162,34 +115,82 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="180dp"
-
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="98dp"
+
                 android:layout_marginEnd="20dp"
-                >
+                android:orientation="horizontal">
 
 
                 <TextView
-                    android:layout_weight="10"
-                    android:layout_marginEnd="25dp"
-                    android:id="@+id/louver"
+                    android:id="@+id/rgb_lenta"
                     android:layout_width="match_parent"
-                    android:gravity="center"
                     android:layout_height="match_parent"
-                    android:text="Жалюзи"
-                    android:textSize="@dimen/text_size_names_of_rooms"
-                    android:fontFamily="@font/beauty_font_rus"
+                    android:layout_marginEnd="25dp"
+                    android:layout_weight="10"
                     android:background="@drawable/textview_on_click_change_color"
-                    />
-
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:gravity="center"
+                    android:text="RGB-лента"
+                    android:textSize="@dimen/text_size_names_of_rooms" />
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_weight="6"
+                    android:id="@+id/btn_rgb_lenta_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="5"
+                    android:background="@drawable/button_change_color_on_off"
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:text="Вкл"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_of_number_gadgets" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_rgb_lenta_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/button_change_color_on_off"
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:gravity="center"
+                    android:text="Выкл"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_of_number_gadgets" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="180dp"
+
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/louver"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="25dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/textview_on_click_change_color"
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:gravity="center"
+                    android:text="Жалюзи"
+                    android:textSize="@dimen/text_size_names_of_rooms" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_louver"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="6"
                     android:background="@drawable/button_change_color_on_off"
                     android:fontFamily="@font/beauty_font_rus"
                     android:gravity="center"
@@ -200,36 +201,33 @@
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="262dp"
 
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="20dp"
-                >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="15"
-                    android:layout_marginEnd="20dp"
                     android:id="@+id/podsetka_stol"
                     android:layout_width="match_parent"
-                    android:gravity="center"
                     android:layout_height="match_parent"
-                    android:text="Подветка на столе"
-                    android:textSize="@dimen/text_size_names_of_rooms"
-                    android:fontFamily="@font/beauty_font_rus"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="15"
                     android:background="@drawable/textview_on_click_change_color"
-                    />
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:gravity="center"
+                    android:text="Подветка на столе"
+                    android:textSize="@dimen/text_size_names_of_rooms" />
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_weight="10"
                     android:id="@+id/btn_podsvetka_stol"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="10"
                     android:background="@drawable/button_change_color_on_off"
                     android:fontFamily="@font/beauty_font_rus"
                     android:gravity="center"
@@ -241,34 +239,31 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="344dp"
 
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="20dp"
-                >
+                android:orientation="horizontal">
 
 
                 <TextView
-                    android:layout_weight="15"
-                    android:layout_marginEnd="20dp"
                     android:id="@+id/svetilnik_stol"
                     android:layout_width="match_parent"
-                    android:gravity="center"
                     android:layout_height="match_parent"
-                    android:text="Светильник"
-                    android:textSize="@dimen/text_size_names_of_rooms"
-                    android:fontFamily="@font/beauty_font_rus"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="15"
                     android:background="@drawable/textview_on_click_change_color"
-                    />
-
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:gravity="center"
+                    android:text="Светильник"
+                    android:textSize="@dimen/text_size_names_of_rooms" />
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_weight="10"
                     android:id="@+id/btn_svetilnik_stol"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="10"
                     android:background="@drawable/button_change_color_on_off"
                     android:fontFamily="@font/beauty_font_rus"
                     android:gravity="center"
@@ -281,34 +276,31 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="426dp"
 
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="20dp"
-                >
+                android:orientation="horizontal">
 
 
                 <TextView
-                    android:layout_weight="15"
-                    android:layout_marginEnd="20dp"
                     android:id="@+id/girlanda_stena"
                     android:layout_width="match_parent"
-                    android:gravity="center"
                     android:layout_height="match_parent"
-                    android:text="Гирлянда на стене"
-                    android:textSize="@dimen/text_size_names_of_rooms"
-                    android:fontFamily="@font/beauty_font_rus"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="15"
                     android:background="@drawable/textview_on_click_change_color"
-                    />
-
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:gravity="center"
+                    android:text="Гирлянда на стене"
+                    android:textSize="@dimen/text_size_names_of_rooms" />
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_weight="10"
                     android:id="@+id/btn_girlanda_stena"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="10"
                     android:background="@drawable/button_change_color_on_off"
                     android:fontFamily="@font/beauty_font_rus"
                     android:gravity="center"
@@ -320,32 +312,30 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="508dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="508dp"
                 android:layout_marginEnd="20dp"
-                >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="10"
-                    android:layout_marginEnd="25dp"
                     android:id="@+id/projector_Epson"
                     android:layout_width="match_parent"
-                    android:gravity="center"
                     android:layout_height="match_parent"
-                    android:text="Проектор Epson"
-                    android:textSize="@dimen/text_size_names_of_rooms"
-                    android:fontFamily="@font/beauty_font_rus"
+                    android:layout_marginEnd="25dp"
+                    android:layout_weight="10"
                     android:background="@drawable/textview_on_click_change_color"
-                    />
+                    android:fontFamily="@font/beauty_font_rus"
+                    android:gravity="center"
+                    android:text="Проектор Epson"
+                    android:textSize="@dimen/text_size_names_of_rooms" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_marginEnd="15dp"
-                    android:layout_weight="5"
                     android:id="@+id/projector_Epson_on"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="5"
                     android:background="@drawable/button_change_color_on_off"
                     android:fontFamily="@font/beauty_font_rus"
                     android:text="Вкл"
@@ -353,10 +343,10 @@
                     android:textSize="@dimen/text_size_of_number_gadgets" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_weight="4"
                     android:id="@+id/projector_Epson_off"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="4"
                     android:background="@drawable/button_change_color_on_off"
                     android:fontFamily="@font/beauty_font_rus"
                     android:gravity="center"
@@ -365,38 +355,41 @@
                     android:textSize="@dimen/text_size_of_number_gadgets" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="590dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="590dp"
                 android:layout_marginEnd="20dp"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/btn_to_presets"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/white"
+                    android:background="@drawable/preset_gradient"
+                    android:fontFamily="@font/beauty_font_rus"
                     android:gravity="center"
                     android:text="Пресеты"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:textSize="40dp"
-                    android:background="@drawable/preset_gradient"
-                    />
+                    android:textColor="@color/white"
+                    android:textSize="40dp" />
 
 
             </LinearLayout>
 
 
-
-
-
         </FrameLayout>
 
     </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

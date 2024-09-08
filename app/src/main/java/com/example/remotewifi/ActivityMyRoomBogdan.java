@@ -11,12 +11,16 @@ import android.hardware.ConsumerIrManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
@@ -191,7 +195,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_to_rgb_place = new Intent(ActivityMyRoomBogdan.this, ActivityRoomBogdanRGB.class);
-                startActivity(intent_to_rgb_place);
+                startActivity(intent_to_rgb_place);finish();
             }
         });
 
@@ -200,9 +204,31 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_to_presets = new Intent(ActivityMyRoomBogdan.this, PresetActivity.class);
-                startActivity(intent_to_presets);
+                startActivity(intent_to_presets);finish();
             }
         });
+
+
+        ImageButton btn_backspace = (ImageButton) findViewById(R.id.btn_backspace);
+        btn_backspace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_back = new Intent(ActivityMyRoomBogdan.this, TheHomeActivity.class);
+                startActivity(intent_back);finish();
+            }
+        });
+
+
+        ImageButton btn_home = (ImageButton)findViewById(R.id.btn_home);
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_home = new Intent(ActivityMyRoomBogdan.this, TheHomeActivity.class);
+                startActivity(intent_home);finish();
+            }
+        });
+
+
 
         //Принимаем интенты пресетов
 
