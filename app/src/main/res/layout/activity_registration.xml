@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AutorizationActivity"
-    android:background="@drawable/background"
-    >
+    tools:context=".RegistrationActivity"
+    android:background="@drawable/back_for_reg">
+
     <TextView
-        android:id="@+id/textview_sign_in"
+        android:id="@+id/reg_textview_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ВХОД В СИСТЕМУ"
+        android:text="РЕГИСТРАЦИЯ"
         android:fontFamily="@font/beauty_font_rus"
         android:textColor="@color/white"
         android:textSize="40dp"
@@ -21,15 +21,15 @@
         />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/reg_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textview_sign_in"
+        android:layout_below="@id/reg_textview_sign_in"
         android:layout_marginStart="25dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="25dp"
         android:background="#30FFFFFF"
-        android:hint="Логин"
+        android:hint="Придумайте логин"
         android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -39,17 +39,16 @@
         android:drawablePadding="30dp"
         />
 
-    <!--
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/reg_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/username"
+        android:layout_below="@id/reg_username"
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:background="#30FFFFFF"
-        android:hint="Email"
+        android:hint="Ваш действующий email"
         android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -58,19 +57,18 @@
         android:drawableLeft="@drawable/baseline_alternate_email_24"
         android:drawablePadding="30dp"
         />
-        -->
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/reg_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
-        android:layout_below="@id/username"
+        android:layout_below="@id/reg_email"
         android:layout_marginEnd="25dp"
         android:background="#30FFFFFF"
-        android:hint="Пароль"
+        android:hint="Придумайте пароль"
         android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -83,42 +81,16 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/login_btn"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/password"
-        android:text="Войти"
+        android:id="@+id/btn_reg_"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/reg_password"
+        android:text="Зарегистрироваться"
         android:textColor="@color/white"
         android:fontFamily="@font/beauty_font_rus"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:backgroundTint="#7E031E49"
         android:layout_centerHorizontal="true"
-
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/login_btn"
-        android:textSize="25dp"
-        android:text="Забыли пароль?"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/beauty_font_rus"
-        android:id="@+id/forgot_password"
-        />
-    <TextView
-        android:layout_below="@id/forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="30dp"
-        android:text="Регистрация"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/beauty_font_rus"
-        android:id="@+id/btn_registration"
-        android:onClick="onClickToReg"
-        />
+        android:onClick="onClickReg"/>
 
 
 
