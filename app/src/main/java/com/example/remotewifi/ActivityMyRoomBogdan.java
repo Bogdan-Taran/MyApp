@@ -57,6 +57,8 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
     TextView btn_to_lightroom;
     Button projector_Epson_on;
     Button projector_Epson_off;
+    TextView btn_to_activity_louver;
+
 
     SharedPreferences pref;
     TextView podsvetkaStolTextView;
@@ -91,6 +93,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
         btn_to_lightroom = (TextView) findViewById(R.id. center_light);
         projector_Epson_on = (Button) findViewById(R.id. projector_Epson_on);
         projector_Epson_off = (Button) findViewById(R.id. projector_Epson_off);
+        btn_to_activity_louver = (TextView) findViewById(R.id. louver);
 
         // ДЛЯ ИК
         IrMan = (ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE);
@@ -225,6 +228,16 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent_home = new Intent(ActivityMyRoomBogdan.this, TheHomeActivity.class);
                 startActivity(intent_home);finish();
+            }
+        });
+
+
+
+        btn_to_activity_louver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_to_activity_louver = new Intent(ActivityMyRoomBogdan.this, RoomBogdanLouver.class);
+                startActivity(intent_to_activity_louver);finish();
             }
         });
 
