@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -50,6 +51,28 @@ public class RoomBogdanLouver extends AppCompatActivity {
             return insets;
         });
 
+
+
+        final container = findViewById(R.id.container);
+        final LayoutInflater inflater = getLayoutInflater();
+
+        Button button = findViewbyId(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addView(inflater, container)
+            }
+        });
+
+
+
+
+
+
+
+
+
+
         //ИНТЕНТЫ
         ImageButton btn_backdpace = (ImageButton) findViewById(R.id.btn_backdpace);
         btn_backdpace.setOnClickListener(new View.OnClickListener() {
@@ -84,14 +107,18 @@ public class RoomBogdanLouver extends AppCompatActivity {
         scheduleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Ваш выбор: " + data_for_dropdown[position], Toast.LENGTH_SHORT).show();
                 if(position == 1){
+                    LinearLayout layout1 = new LinearLayout(getApplicationContext());
+                    layout1.setOrientation(LinearLayout.VERTICAL);
 
+                    LinearLayout.LayoutParams layout1params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 90);
+                    layout1params.setMargins(15, 364, 20, 0);
+                    layout1.setBackgroundColor(16777215);
 
-                    LinearLayout layout_set_time = new LinearLayout(requireContext(RoomBogdanLouver));
-                    layout_set_time.setOrientation(LinearLayout.VERTICAL);
-
-                    LinearLayout.LayoutParams layoutParams_set_time = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 90);
-                    layoutParams_set_time.setMargins(15, 364, 20, 0);
+                    Button okButton=new Button(getApplicationContext());
+                    okButton.setText("some text");
+                    layout1.addView(okButton, layout1params);
 
 
 
@@ -102,6 +129,24 @@ public class RoomBogdanLouver extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+
+        Button btn_both_louver_open = (Button) findViewById(R.id.btn_both_louver_open);
+        btn_both_louver_open.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout layout1 = new LinearLayout(getBaseContext());
+                layout1.setOrientation(LinearLayout.VERTICAL);
+
+                LinearLayout.LayoutParams layout1params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 90);
+                layout1params.setMargins(15, 364, 20, 0);
+                layout1.setBackgroundColor(16777215);
+
+                Button okButton=new Button(getBaseContext());
+                okButton.setText("some text");
+                layout1.addView(okButton, layout1params);
             }
         });
 
