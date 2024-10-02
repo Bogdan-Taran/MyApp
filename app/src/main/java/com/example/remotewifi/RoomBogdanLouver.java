@@ -51,18 +51,10 @@ public class RoomBogdanLouver extends AppCompatActivity {
             return insets;
         });
 
+        LinearLayout linear_layout_set_time = (LinearLayout) findViewById(R.id.linear_layout_set_time);
 
 
-        final container = findViewById(R.id.container);
-        final LayoutInflater inflater = getLayoutInflater();
 
-        Button button = findViewbyId(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addView(inflater, container)
-            }
-        });
 
 
 
@@ -109,20 +101,17 @@ public class RoomBogdanLouver extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), "Ваш выбор: " + data_for_dropdown[position], Toast.LENGTH_SHORT).show();
                 if(position == 1){
-                    LinearLayout layout1 = new LinearLayout(getApplicationContext());
-                    layout1.setOrientation(LinearLayout.VERTICAL);
-
-                    LinearLayout.LayoutParams layout1params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 90);
-                    layout1params.setMargins(15, 364, 20, 0);
-                    layout1.setBackgroundColor(16777215);
-
-                    Button okButton=new Button(getApplicationContext());
-                    okButton.setText("some text");
-                    layout1.addView(okButton, layout1params);
-
-
-
-
+                   linear_layout_set_time.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                   linear_layout_set_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
+                   linear_layout_set_time.requestLayout();
+                } else if (position == 2) {
+                    linear_layout_set_time.getLayoutParams().height = 0;
+                    linear_layout_set_time.getLayoutParams().width = 350;
+                    linear_layout_set_time.requestLayout();
+                }else {
+                    linear_layout_set_time.getLayoutParams().height = 0;
+                    linear_layout_set_time.getLayoutParams().width = 350;
+                    linear_layout_set_time.requestLayout();
                 }
             }
 
@@ -133,22 +122,7 @@ public class RoomBogdanLouver extends AppCompatActivity {
         });
 
 
-        Button btn_both_louver_open = (Button) findViewById(R.id.btn_both_louver_open);
-        btn_both_louver_open.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LinearLayout layout1 = new LinearLayout(getBaseContext());
-                layout1.setOrientation(LinearLayout.VERTICAL);
 
-                LinearLayout.LayoutParams layout1params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 90);
-                layout1params.setMargins(15, 364, 20, 0);
-                layout1.setBackgroundColor(16777215);
-
-                Button okButton=new Button(getBaseContext());
-                okButton.setText("some text");
-                layout1.addView(okButton, layout1params);
-            }
-        });
 
 
 

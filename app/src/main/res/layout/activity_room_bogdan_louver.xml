@@ -13,49 +13,49 @@
         android:id="@+id/textImg_top_room_louver"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@drawable/border_under_textview_"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/border_under_textview_">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:backgroundTint="#9FB900C6"
             android:id="@+id/btn_backdpace"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/baseline_keyboard_backspace_24"
             android:layout_weight="6"
-            />
+            android:backgroundTint="#9FB900C6"
+            android:src="@drawable/baseline_keyboard_backspace_24" />
+
         <TextView
             android:id="@+id/text_top_my_room_rgb"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="2"
             android:fontFamily="@font/beauty_font_rus"
             android:gravity="center"
-            android:layout_gravity="center"
             android:text="Пульт для жалюзей"
             android:textColor="@color/white"
             android:textSize="26dp" />
 
         <ImageButton
             android:id="@+id/btn_home"
-            android:backgroundTint="#9FB900C6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="6"
+            android:backgroundTint="#9FB900C6"
             android:src="@drawable/baseline_home_24" />
 
     </LinearLayout>
-    
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textImg_top_room_louver"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/textImg_top_room_louver">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -218,32 +218,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/textview_on_click_change_color"
+                android:fontFamily="@font/beauty_font_rus"
+                android:gravity="center"
                 android:text="Открыть жалюзи по времени:"
                 android:textColor="@color/black"
-                android:fontFamily="@font/beauty_font_rus"
                 android:textSize="20dp"
-                android:gravity="center"
-                android:background="@drawable/textview_on_click_change_color"
 
                 />
 
 
             <Spinner
-                android:background="#FBE268"
-                android:layout_weight="1"
+                android:id="@+id/scheduleSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/scheduleSpinner"
-                />
+                android:layout_weight="1"
+                android:background="#FBE268" />
 
         </LinearLayout>
-
 
 
         <LinearLayout
             android:id="@+id/linear_layout_set_time"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="364dp"
             android:layout_marginEnd="20dp"
@@ -258,48 +256,62 @@
                 android:background="@drawable/textview_on_click_change_color"
                 android:fontFamily="@font/beauty_font_rus"
                 android:gravity="center"
+                android:padding="10dp"
                 android:text="Задать время ЧЧ:ММ"
                 android:textSize="20dp" />
 
-            <LinearLayout
-                android:layout_weight="2"
+                <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal">
 
-                <EditText
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:hint="Время"
-                    android:inputType="datetime"
-                    android:gravity="center"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <ImageButton
-                    android:backgroundTint="#DD6D0A"
-                    android:id="@+id/btn_send_time"
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:hint="hour"
+                        android:inputType="datetime" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:hint="minute"
+                        android:inputType="datetime" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/baseline_schedule_send_24"
-                    android:layout_weight="6"
-                    />
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btn_send_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="6"
+                        android:backgroundTint="#DD6D0A"
+                        android:src="@drawable/baseline_schedule_send_24" />
+
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
 
 
-
-
-
-        
-</FrameLayout>
-    
-    
-
-
-
-
-
-
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
