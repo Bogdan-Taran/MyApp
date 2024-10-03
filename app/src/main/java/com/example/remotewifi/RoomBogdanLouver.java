@@ -38,6 +38,8 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
     private Spinner scheduleSpinner;
     SharedPreferences pref_save_choice;
+    EditText edittextInputHour;
+    EditText edittextInputMinute;
 
 
 
@@ -53,13 +55,40 @@ public class RoomBogdanLouver extends AppCompatActivity {
         });
 
         LinearLayout linear_layout_set_time = (LinearLayout) findViewById(R.id.linear_layout_set_time);
-
         pref_save_choice = getSharedPreferences("Save_Choice", MODE_PRIVATE);     // создаём внутреннее хранилище
 
 
+        edittextInputHour = (EditText) findViewById(R.id.edittextInputHour);
+        edittextInputMinute = (EditText) findViewById(R.id.edittextInputMinute);
+        ImageButton btn_send_time = (ImageButton) findViewById(R.id.btn_send_time);
+        paste_hourAndMinute();
+
+        btn_send_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
 
-//        pastePositionSpinner();
+                if(!edittextInputHour.getText().toString().isEmpty() && !edittextInputMinute.getText().toString().isEmpty()) {      // проверяем наши edittext а пустоту чтобыне вылазила ошибка
+                    Integer send_hour = Integer.parseInt(edittextInputHour.getText().toString());
+                    Integer send_minunte = Integer.parseInt(edittextInputMinute.getText().toString());
+
+                    SharedPreferences.Editor pref_edit = pref_save_choice.edit();   // включаем функцию принятия изменений
+                    pref_edit.putInt("send_hour", send_hour);      // складываем число-позицию под ключом selectedUserCoice
+                    pref_edit.putInt("send_minunte", send_minunte);      // складываем число-позицию под ключом selectedUserCoice
+                    pref_edit.apply();      // применяем изменения
+
+                }
+                Toast.makeText(RoomBogdanLouver.this, "Время открытия жаллюзей установлено на " + pref_save_choice.getInt("send_hour", 0) + ":" + pref_save_choice.getInt("send_minunte", 0), Toast.LENGTH_LONG).show();
+
+
+            }
+        });
+
+
+
+
+
+
 
 
 
@@ -99,7 +128,7 @@ public class RoomBogdanLouver extends AppCompatActivity {
         scheduleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Ваш выбор: " + data_for_dropdown[position], Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Ваш выбор: " + data_for_dropdown[position], Toast.LENGTH_SHORT).show();
 //
                 SharedPreferences.Editor pref_edit = pref_save_choice.edit();   // включаем функцию принятия изменений
                 pref_edit.putInt("userChoice", position);      // складываем число-позицию под ключом selectedUserCoice
@@ -127,6 +156,16 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
 
 
+    }
+
+    public void paste_hourAndMinute(){
+        int hour = pref_save_choice.getInt("send_hour", 0);
+        int minute = pref_save_choice.getInt("send_minunte", 0);
+
+        if(hour != -1 && minute != -1){
+            edittextInputHour.setText(String.valueOf(hour));
+            edittextInputMinute.setText(String.valueOf(minute));
+        }
     }
 
 
