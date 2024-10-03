@@ -6,6 +6,7 @@ import static androidx.core.content.ContentProviderCompat.requireContext;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -33,12 +34,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class RoomBogdanLouver extends AppCompatActivity {
-    String[] data_for_dropdown = {"Нет", "Задать время", "Автоматически по рассвету"};
+    String[] data_for_dropdown = {"Нет", "Задать время"};
 
     private Spinner scheduleSpinner;
-    private Button openScheduleButton;
-    private LinearLayout timeInputLayout;
-    private EditText inputHourSchedule, inputMinuteSchedule;
+    SharedPreferences pref_save_choice;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +54,12 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
         LinearLayout linear_layout_set_time = (LinearLayout) findViewById(R.id.linear_layout_set_time);
 
+        pref_save_choice = getSharedPreferences("Save_Choice", MODE_PRIVATE);     // создаём внутреннее хранилище
 
 
 
 
-
-
-
-
-
+//        pastePositionSpinner();
 
 
 
@@ -94,23 +92,29 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
         scheduleSpinner.setAdapter(adapter_for_dropdown);
         scheduleSpinner.setPrompt("Открыть жалюзи по времени");
-        scheduleSpinner.setSelection(0);
+        scheduleSpinner.setSelection(pref_save_choice.getInt("userChoice", 0));
+
+
 
         scheduleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), "Ваш выбор: " + data_for_dropdown[position], Toast.LENGTH_SHORT).show();
+//
+                SharedPreferences.Editor pref_edit = pref_save_choice.edit();   // включаем функцию принятия изменений
+                pref_edit.putInt("userChoice", position);      // складываем число-позицию под ключом selectedUserCoice
+                pref_edit.apply();      // применяем изменения
+
+
+
                 if(position == 1){
                    linear_layout_set_time.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
                    linear_layout_set_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
                    linear_layout_set_time.requestLayout();
-                } else if (position == 2) {
+                }
+                else {
                     linear_layout_set_time.getLayoutParams().height = 0;
-                    linear_layout_set_time.getLayoutParams().width = 350;
-                    linear_layout_set_time.requestLayout();
-                }else {
-                    linear_layout_set_time.getLayoutParams().height = 0;
-                    linear_layout_set_time.getLayoutParams().width = 350;
+                    linear_layout_set_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
                     linear_layout_set_time.requestLayout();
                 }
             }
@@ -123,20 +127,9 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
+
 
 
 
