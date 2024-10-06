@@ -249,7 +249,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/test"
+                android:id="@+id/textview_setTheTime"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
@@ -271,7 +271,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <EditText
                         android:id="@+id/edittextInputHour"
@@ -281,6 +281,16 @@
                         android:gravity="center"
                         android:hint="hour"
                         android:inputType="datetime" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:text=":"
+                        android:textSize="30dp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        />
 
                     <EditText
                         android:id="@+id/edittextInputMinute"

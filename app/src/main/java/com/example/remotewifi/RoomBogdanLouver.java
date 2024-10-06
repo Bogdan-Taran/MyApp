@@ -33,6 +33,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import org.w3c.dom.Text;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class RoomBogdanLouver extends AppCompatActivity {
     String[] data_for_dropdown = {"Нет", "Задать время"};
 
@@ -40,6 +48,11 @@ public class RoomBogdanLouver extends AppCompatActivity {
     SharedPreferences pref_save_choice;
     EditText edittextInputHour;
     EditText edittextInputMinute;
+
+    private Request request;    // добавляем переменную для запросов (OkHttp3)
+    SharedPreferences pref;
+    TextView textview_setTheTime;
+    String send_time_numbers;
 
 
 
@@ -63,9 +76,12 @@ public class RoomBogdanLouver extends AppCompatActivity {
         ImageButton btn_send_time = (ImageButton) findViewById(R.id.btn_send_time);
         paste_hourAndMinute();
 
+        textview_setTheTime = (TextView) findViewById(R.id.textview_setTheTime);
+
         btn_send_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
 
                 if(!edittextInputHour.getText().toString().isEmpty() && !edittextInputMinute.getText().toString().isEmpty()) {      // проверяем наши edittext а пустоту чтобыне вылазила ошибка
@@ -77,8 +93,23 @@ public class RoomBogdanLouver extends AppCompatActivity {
                     pref_edit.putInt("send_minunte", send_minunte);      // складываем число-позицию под ключом selectedUserCoice
                     pref_edit.apply();      // применяем изменения
 
+                    post("start");  // отправляем на сервер команду подготовиться к принятию чисел
+
+                    int time_number_1 = pref_save_choice.getInt("send_hour", 0);
+                    int time_number_2 = pref_save_choice.getInt("send_minunte", 0);
+                    send_time_numbers = time_number_1 + ":" + time_number_2;
+
+                    post(send_time_numbers);
+
+
                 }
                 Toast.makeText(RoomBogdanLouver.this, "Время открытия жаллюзей установлено на " + pref_save_choice.getInt("send_hour", 0) + ":" + pref_save_choice.getInt("send_minunte", 0), Toast.LENGTH_LONG).show();
+
+
+
+
+
+
 
 
             }
@@ -166,6 +197,36 @@ public class RoomBogdanLouver extends AppCompatActivity {
             edittextInputHour.setText(String.valueOf(hour));
             edittextInputMinute.setText(String.valueOf(minute));
         }
+    }
+
+
+
+    private void post(String post) {
+        new Thread(new Runnable() { // новый второстепенный поток
+            @Override
+            public void run() {     // второст. поток
+                pref = getSharedPreferences("IP_ESP", MODE_PRIVATE);
+                String ip_edText = pref.getString("ip", "192.168.1.41");
+                OkHttpClient client = new OkHttpClient();
+
+
+                request = new Request.Builder().url("http://" + ip_edText + "/" + post).build();
+                try {
+                    Response response = client.newCall(request).execute();
+                    if (response.isSuccessful()) {
+                        assert response.body() != null;
+                        String resultText = response.body().string();   // это для получения данных с ESP - там могут быть датчики температуры и пр. Пока задействовать не будем
+
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+
+                }
+
+
+            }
+        }).start(); // запускаем второстепенный поток
     }
 
 
