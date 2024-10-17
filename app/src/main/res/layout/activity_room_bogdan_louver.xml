@@ -74,11 +74,11 @@
                 android:background="@drawable/textview_on_click_change_color"
                 android:fontFamily="@font/beauty_font_rus"
                 android:gravity="center"
-                android:text="Открыть обе жалюзи"
+                android:text="Обе жалюзи"
                 android:textSize="25dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_both_louver_open"
+                android:id="@+id/btn_open_lovers"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -86,21 +86,21 @@
                 android:layout_weight="5"
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
-                android:text="Вкл"
+                android:text="откр"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_of_number_gadgets" />
+                android:textSize="15dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_both_louver_close"
+                android:id="@+id/btn_close_lovers"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
                 android:gravity="center"
-                android:text="Выкл"
+                android:text="закр"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_of_number_gadgets" />
+                android:textSize="15dp" />
 
         </LinearLayout>
 
@@ -136,9 +136,9 @@
                 android:layout_weight="5"
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
-                android:text="Вкл"
+                android:text="откр"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_of_number_gadgets" />
+                android:textSize="15dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_close_louver_1"
@@ -148,9 +148,9 @@
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
                 android:gravity="center"
-                android:text="Выкл"
+                android:text="закр"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_of_number_gadgets" />
+                android:textSize="15dp" />
 
         </LinearLayout>
 
@@ -186,9 +186,9 @@
                 android:layout_weight="5"
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
-                android:text="Вкл"
+                android:text="откр"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_of_number_gadgets" />
+                android:textSize="15dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_close_louver_2"
@@ -198,9 +198,9 @@
                 android:background="@drawable/button_change_color_on_off"
                 android:fontFamily="@font/beauty_font_rus"
                 android:gravity="center"
-                android:text="Выкл"
+                android:text="закр"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_of_number_gadgets" />
+                android:textSize="15dp" />
 
 
         </LinearLayout>

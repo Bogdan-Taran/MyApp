@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.InputType;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -55,6 +56,10 @@ public class RoomBogdanLouver extends AppCompatActivity {
     String send_time_numbers;
 
 
+    Button btn_open_lovers;
+    Button btn_close_lovers;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +83,10 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
         textview_setTheTime = (TextView) findViewById(R.id.textview_setTheTime);
 
+        btn_open_lovers = (Button) findViewById(R.id.btn_open_lovers);
+        btn_close_lovers = (Button) findViewById(R.id.btn_close_lovers);
+
+
         btn_send_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +94,7 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
 
                 if(!edittextInputHour.getText().toString().isEmpty() && !edittextInputMinute.getText().toString().isEmpty()) {      // проверяем наши edittext а пустоту чтобыне вылазила ошибка
+
                     Integer send_hour = Integer.parseInt(edittextInputHour.getText().toString());
                     Integer send_minunte = Integer.parseInt(edittextInputMinute.getText().toString());
 
@@ -93,25 +103,39 @@ public class RoomBogdanLouver extends AppCompatActivity {
                     pref_edit.putInt("send_minunte", send_minunte);      // складываем число-позицию под ключом selectedUserCoice
                     pref_edit.apply();      // применяем изменения
 
-                    post("start");  // отправляем на сервер команду подготовиться к принятию чисел
+
 
                     int time_number_1 = pref_save_choice.getInt("send_hour", 0);
                     int time_number_2 = pref_save_choice.getInt("send_minunte", 0);
-                    send_time_numbers = time_number_1 + ":" + time_number_2;
+                    send_time_numbers = "numbers" + "." + time_number_1 + ":" + time_number_2;
+                    post("start");  // отправляем на сервер команду подготовиться к принятию чисел
 
-                    post(send_time_numbers);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            post(send_time_numbers);
+                        }
+                    }, 500);
+
+
 
 
                 }
                 Toast.makeText(RoomBogdanLouver.this, "Время открытия жаллюзей установлено на " + pref_save_choice.getInt("send_hour", 0) + ":" + pref_save_choice.getInt("send_minunte", 0), Toast.LENGTH_LONG).show();
 
+            }
+        });
 
-
-
-
-
-
-
+        btn_open_lovers.setOnClickListener(new View.OnClickListener() { //кликер, который отправляет сигнал открытия жалюзей
+            @Override
+            public void onClick(View v) {
+                post("btn_open_lovers");
+            }
+        });
+        btn_close_lovers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("btn_close_lovers");
             }
         });
 
@@ -167,15 +191,26 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
 
 
-                if(position == 1){
+                if(position == 1){      // если выбрано "задать время"
                    linear_layout_set_time.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
                    linear_layout_set_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
                    linear_layout_set_time.requestLayout();
                 }
-                else {
+                else {      // если выбрано "нет"
                     linear_layout_set_time.getLayoutParams().height = 0;
                     linear_layout_set_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
                     linear_layout_set_time.requestLayout();
+
+                    // отправляем на сервер отрицательное число чтобы ничего не открывалось по таймеру
+                    send_time_numbers = "numbers" + "." + -1 + ":" + -1;
+                    post("start");  // отправляем на сервер команду подготовиться к принятию чисел
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            post(send_time_numbers);
+                        }
+                    }, 500);
                 }
             }
 
