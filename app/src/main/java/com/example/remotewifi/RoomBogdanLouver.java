@@ -47,17 +47,33 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
     private Spinner scheduleSpinner;
     SharedPreferences pref_save_choice;
-    EditText edittextInputHour;
-    EditText edittextInputMinute;
+
+    // время открытия утром
+    EditText edittextInputHour_morning;
+    EditText edittextInputMinute_morning;
+
+
+    // время закртыия вечером
+    EditText edittextInputHour_evening;
+    EditText edittextInputMinute_evening;
 
     private Request request;    // добавляем переменную для запросов (OkHttp3)
     SharedPreferences pref;
     TextView textview_setTheTime;
-    String send_time_numbers;
+    String send_time_numbers_morning;
+
+    String send_time_numbers_evening;
 
 
     Button btn_open_lovers;
     Button btn_close_lovers;
+
+    Button btn_open_lover_one;
+    Button btn_close_louver_one;
+
+    Button btn_open_louver_two;
+    Button btn_close_louver_two;
+
 
 
 
@@ -72,19 +88,31 @@ public class RoomBogdanLouver extends AppCompatActivity {
             return insets;
         });
 
-        LinearLayout linear_layout_set_time = (LinearLayout) findViewById(R.id.linear_layout_set_time);
+        LinearLayout linear_layout_set_All_time = (LinearLayout) findViewById(R.id.linear_layout_set_All_time);
         pref_save_choice = getSharedPreferences("Save_Choice", MODE_PRIVATE);     // создаём внутреннее хранилище
 
+        // время открытия утром
+        edittextInputHour_morning = (EditText) findViewById(R.id.edittextInputHour_morning);
+        edittextInputMinute_morning = (EditText) findViewById(R.id.edittextInputMinute_morning);
 
-        edittextInputHour = (EditText) findViewById(R.id.edittextInputHour);
-        edittextInputMinute = (EditText) findViewById(R.id.edittextInputMinute);
+        // время закрытия вечером
+        edittextInputHour_evening = (EditText) findViewById(R.id.edittextInputHour_evening);
+        edittextInputMinute_evening = (EditText) findViewById(R.id.edittextInputMinute_evening);
+
+
         ImageButton btn_send_time = (ImageButton) findViewById(R.id.btn_send_time);
         paste_hourAndMinute();
 
-        textview_setTheTime = (TextView) findViewById(R.id.textview_setTheTime);
+
 
         btn_open_lovers = (Button) findViewById(R.id.btn_open_lovers);
         btn_close_lovers = (Button) findViewById(R.id.btn_close_lovers);
+
+        btn_open_lover_one = (Button) findViewById(R.id.btn_open_lover_one);
+        btn_close_louver_one = (Button) findViewById(R.id.btn_close_louver_one);
+
+        btn_open_louver_two = (Button) findViewById(R.id.btn_open_louver_two);
+        btn_close_louver_two = (Button) findViewById(R.id.btn_close_louver_two);
 
 
         btn_send_time.setOnClickListener(new View.OnClickListener() {
@@ -93,27 +121,48 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
 
 
-                if(!edittextInputHour.getText().toString().isEmpty() && !edittextInputMinute.getText().toString().isEmpty()) {      // проверяем наши edittext а пустоту чтобыне вылазила ошибка
+                if(!edittextInputHour_morning.getText().toString().isEmpty() && !edittextInputMinute_morning.getText().toString().isEmpty() && !edittextInputHour_evening.getText().toString().isEmpty() && !edittextInputMinute_evening.getText().toString().isEmpty()) {      // проверяем наши edittext а пустоту чтобыне вылазила ошибка
 
-                    Integer send_hour = Integer.parseInt(edittextInputHour.getText().toString());
-                    Integer send_minunte = Integer.parseInt(edittextInputMinute.getText().toString());
+                    Integer send_hour_morning = Integer.parseInt(edittextInputHour_morning.getText().toString());
+                    Integer send_minute_morning = Integer.parseInt(edittextInputMinute_morning.getText().toString());
+
+                    Integer send_hour_evening = Integer.parseInt(edittextInputHour_evening.getText().toString());
+                    Integer send_minute_evening = Integer.parseInt(edittextInputMinute_evening.getText().toString());
 
                     SharedPreferences.Editor pref_edit = pref_save_choice.edit();   // включаем функцию принятия изменений
-                    pref_edit.putInt("send_hour", send_hour);      // складываем число-позицию под ключом selectedUserCoice
-                    pref_edit.putInt("send_minunte", send_minunte);      // складываем число-позицию под ключом selectedUserCoice
+                    pref_edit.putInt("send_hour_morning", send_hour_morning);      //
+                    pref_edit.putInt("send_minute_morning", send_minute_morning);      //
+
+                    pref_edit.putInt("send_hour_evening", send_hour_evening);      //
+                    pref_edit.putInt("send_minute_evening", send_minute_evening);      //
                     pref_edit.apply();      // применяем изменения
 
 
 
-                    int time_number_1 = pref_save_choice.getInt("send_hour", 0);
-                    int time_number_2 = pref_save_choice.getInt("send_minunte", 0);
-                    send_time_numbers = "numbers" + "." + time_number_1 + ":" + time_number_2;
+                    int time_number_1 = pref_save_choice.getInt("send_hour_morning", 0);
+                    int time_number_2 = pref_save_choice.getInt("send_minunte_morning", 0);
+
+                    int time_number_1_1 = pref_save_choice.getInt("send_hour_evening", 0);
+                    int time_number_2_1 = pref_save_choice.getInt("send_minunte_evening", 0);
+
+
+                    send_time_numbers_morning = "numbersMorning" + "." + time_number_1 + ":" + time_number_2;  // создаём строчку для откравки утроеннегооткрытия жалюзей
+
+                    send_time_numbers_evening = "numbersEvening" + "." + time_number_1_1 + ":" + time_number_2_1;
+
                     post("start");  // отправляем на сервер команду подготовиться к принятию чисел
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            post(send_time_numbers);
+                            post(send_time_numbers_morning);
+                        }
+                    }, 500);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            post(send_time_numbers_evening);
                         }
                     }, 500);
 
@@ -136,6 +185,33 @@ public class RoomBogdanLouver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 post("btn_close_lovers");
+            }
+        });
+
+
+        btn_open_lover_one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("btn_open_lover_one");
+            }
+        });
+        btn_close_louver_one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("btn_close_louver_one");
+            }
+        });
+
+        btn_open_louver_two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("btn_open_louver_two");
+            }
+        });
+        btn_close_louver_two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post("btn_close_louver_two");
             }
         });
 
@@ -192,23 +268,30 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
 
                 if(position == 1){      // если выбрано "задать время"
-                   linear_layout_set_time.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
-                   linear_layout_set_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
-                   linear_layout_set_time.requestLayout();
+                    linear_layout_set_All_time.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    linear_layout_set_All_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
+                    linear_layout_set_All_time.requestLayout();
                 }
                 else {      // если выбрано "нет"
-                    linear_layout_set_time.getLayoutParams().height = 0;
-                    linear_layout_set_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
-                    linear_layout_set_time.requestLayout();
+                    linear_layout_set_All_time.getLayoutParams().height = 0;
+                    linear_layout_set_All_time.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
+                    linear_layout_set_All_time.requestLayout();
 
                     // отправляем на сервер отрицательное число чтобы ничего не открывалось по таймеру
-                    send_time_numbers = "numbers" + "." + -1 + ":" + -1;
+                    send_time_numbers_morning = "numbersMorning" + "." + -1 + ":" + -1;
+                    send_time_numbers_evening = "numbersEvening" + "." + -1 + ":" + -1;
                     post("start");  // отправляем на сервер команду подготовиться к принятию чисел
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            post(send_time_numbers);
+                            post(send_time_numbers_morning);
+                        }
+                    }, 500);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            post(send_time_numbers_evening);
                         }
                     }, 500);
                 }
@@ -225,12 +308,19 @@ public class RoomBogdanLouver extends AppCompatActivity {
     }
 
     public void paste_hourAndMinute(){
-        int hour = pref_save_choice.getInt("send_hour", 0);
-        int minute = pref_save_choice.getInt("send_minunte", 0);
+        int hour_morning = pref_save_choice.getInt("send_hour_morning", 0);
+        int minute_morning = pref_save_choice.getInt("send_minute_morning", 0);
 
-        if(hour != -1 && minute != -1){
-            edittextInputHour.setText(String.valueOf(hour));
-            edittextInputMinute.setText(String.valueOf(minute));
+        int hour_evening = pref_save_choice.getInt("send_hour_evening", 0);
+        int minute_evening = pref_save_choice.getInt("send_minute_evening", 0);
+
+        if(hour_morning != -1 && minute_morning != -1 && hour_evening != -1 && minute_evening != -1){
+            edittextInputHour_morning.setText(String.valueOf(hour_morning));
+            edittextInputMinute_morning.setText(String.valueOf(minute_morning));
+
+            edittextInputHour_evening.setText(String.valueOf(hour_evening));
+            edittextInputMinute_evening.setText(String.valueOf(minute_evening));
+
         }
     }
 
