@@ -140,10 +140,10 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
 
                     int time_number_1 = pref_save_choice.getInt("send_hour_morning", 0);
-                    int time_number_2 = pref_save_choice.getInt("send_minunte_morning", 0);
+                    int time_number_2 = pref_save_choice.getInt("send_minute_morning", 0);
 
                     int time_number_1_1 = pref_save_choice.getInt("send_hour_evening", 0);
-                    int time_number_2_1 = pref_save_choice.getInt("send_minunte_evening", 0);
+                    int time_number_2_1 = pref_save_choice.getInt("send_minute_evening", 0);
 
 
                     send_time_numbers_morning = "numbersMorning" + "." + time_number_1 + ":" + time_number_2;  // создаём строчку для откравки утроеннегооткрытия жалюзей
@@ -170,7 +170,7 @@ public class RoomBogdanLouver extends AppCompatActivity {
 
 
                 }
-                Toast.makeText(RoomBogdanLouver.this, "Время открытия жаллюзей установлено на " + pref_save_choice.getInt("send_hour", 0) + ":" + pref_save_choice.getInt("send_minunte", 0), Toast.LENGTH_LONG).show();
+                Toast.makeText(RoomBogdanLouver.this, "Время открытия жаллюзей установлено на " + pref_save_choice.getInt("send_hour_morning", 0) + ":" + pref_save_choice.getInt("send_minunte_morning", 0), Toast.LENGTH_LONG).show();
 
             }
         });
