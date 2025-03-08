@@ -5,8 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background_for_activities"
     tools:context=".TheHomeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_room"
+        />
 
     <LinearLayout
     android:id="@+id/text_linear_top_my_home"
