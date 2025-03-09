@@ -1,6 +1,7 @@
 package com.example.remotewifi;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -36,14 +37,15 @@ import java.util.Objects;
 import jp.wasabeef.glide.transformations.BlurTransformation; // Импортируем BlurTransformation
 
 public class TheHomeActivity extends AppCompatActivity {
-    SharedPreferences pref;
-    private EditText  edText;
-    private ImageView icon_save_ip;
-    private static final String toastShowText = "IP сохранён";
-    private Button btn_room_bogdan_intent;
+
+    Button circle_room_bogdan;
 
     private MaterialCardView customCircle;
     private ImageView backgroundImage;
+
+
+
+
 
 
     @Override
@@ -51,6 +53,9 @@ public class TheHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_the_home);
+
+
+
 
         // Скрываем status bar
         getWindow().setFlags(
@@ -73,6 +78,14 @@ public class TheHomeActivity extends AppCompatActivity {
 
         backgroundImage = findViewById(R.id.background_image_the_home_activity);
         blurBackgroundWithGlide();
+
+
+
+        circle_room_bogdan = findViewById(R.id.circle_room_bogdan);
+        circle_room_bogdan.setOnClickListener(v -> {
+            Intent intent_to_room_bogdan = new Intent(TheHomeActivity.this, ActivityMyRoomBogdan.class);
+            startActivity(intent_to_room_bogdan);finish();
+        });
 
 
     }
