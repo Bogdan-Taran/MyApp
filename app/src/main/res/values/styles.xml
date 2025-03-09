@@ -1,0 +1,9 @@
+<resources>
+    <style name="CustomSwitch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:thumb">@drawable/custom_switch_thumb</item>
+        <item name="android:track">@drawable/custom_switch_track</item>
+        <item name="thumbTint">@android:color/transparent</item>
+        <item name="trackTint">@android:color/transparent</item>
+        <item name="android:thumbTextPadding">0dp</item>
+    </style>
+</resources>
