@@ -1,9 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Базовая тема приложения -->
+    <style name="Base.Theme.RemoteWiFi" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Кастомизация светлой темы -->
+        <item name="colorPrimary">@color/black_light</item> <!-- Основной цвет -->
+        <item name="colorPrimaryVariant">@color/warm_yellow</item> <!-- Вариант основного цвета -->
+        <item name="colorOnPrimary">@color/warm_yellow1</item> <!-- Цвет текста на основном фоне -->
+        <!-- Другие атрибуты по необходимости -->
+    </style>
+
+    <!-- Основная тема приложения (наследуется от базовой) -->
+    <style name="Theme.RemoteWiFi" parent="Base.Theme.RemoteWiFi" />
+
+    <!-- Специальная тема для переключателя -->
+    <style name="Theme.SwitchToggle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/black_light</item>
+        <item name="colorPrimaryVariant">@color/warm_yellow</item>
+        <item name="colorOnPrimary">@color/warm_yellow1</item>
+    </style>
+
+    <!-- Стиль для кастомного переключателя
     <style name="CustomSwitch" parent="Widget.AppCompat.CompoundButton.Switch">
-        <item name="android:thumb">@drawable/custom_switch_thumb</item>
-        <item name="android:track">@drawable/custom_switch_track</item>
-        <item name="thumbTint">@android:color/transparent</item>
-        <item name="trackTint">@android:color/transparent</item>
+        <item name="android:thumb">@drawable/thumb</item>
+        <item name="track">@drawable/track_backgrounds</item>
+        <item name="android:thumbTint">@android:color/transparent</item>
+        <item name="android:trackTint">@android:color/transparent</item>
         <item name="android:thumbTextPadding">0dp</item>
+    </style>-->
+
+    <style name="SwitchCustomSoftYellow" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="track">@drawable/track_custom</item>
+        <item name="android:thumb">@drawable/thumb_img_and_custom</item>
     </style>
 </resources>

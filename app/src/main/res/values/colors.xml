@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+<!--    black-->
     <color name="black">#FF000000</color>
+    <color name="black_light">#BE1B1B1B</color>
+
+
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="warm_yellow">#E4BA87</color>
+    <color name="warm_yellow1">#CD9C8463</color>
+    <color name="warm_yellow2">#EDBD55</color>
+
+
+
+
+<!--    Grey-->
+    <color name="grey1">#2B2B2B</color>
+    <color name="grey2">#393939</color>
+    <color name="grey3">#454545</color>
 
 </resources>

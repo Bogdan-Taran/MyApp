@@ -48,18 +48,7 @@ public class ActivityMyRoomBogdan extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
 
-        // Инициализация элементов
-        customSwitch = findViewById(R.id.customSwitch);
-        switchText = findViewById(R.id.switchText);
 
-        // Начальное состояние: текст справа
-        switchText.setText("ВЫКЛ");
-        switchText.setTranslationX(0f); // Начальная позиция (справа)
-
-        // Слушатель для переключения
-        customSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            updateSwitchPositionAndText(isChecked);
-        });
     }
 
     public void toggleView(View view) {
