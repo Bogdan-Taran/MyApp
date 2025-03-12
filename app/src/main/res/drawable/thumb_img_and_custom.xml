@@ -4,8 +4,8 @@
         android:drawable="@drawable/thumb_custom"/>
     <item android:gravity="center"
         android:drawable="@drawable/switch_imgs"
-        android:top="15dp"
-        android:bottom="15dp"
-        android:left="15dp"
-        android:right="15dp"/>
+        android:top="3dp"
+        android:bottom="5dp"
+        android:left="5dp"
+        android:right="5dp"/>
 </layer-list>

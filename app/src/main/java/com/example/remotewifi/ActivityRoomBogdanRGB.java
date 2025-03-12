@@ -15,6 +15,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 
+
+
 public class ActivityRoomBogdanRGB extends AppCompatActivity {
     ConsumerIrManager IrMan;
 
@@ -66,6 +68,8 @@ public class ActivityRoomBogdanRGB extends AppCompatActivity {
     private static final int[] SeaBlue = {9150,4500, 600,500, 650,500, 600,550, 600,500, 600,550, 600,550, 600,500, 600,550, 600,1650, 600,1650, 600,1650, 650,1600, 650,500, 650,1600, 650,1650, 600,1650, 600,1650, 600,550, 600,1650, 600,500, 650,1600, 650,500, 650,500, 600,500, 650,500, 650,1600, 650,500, 650,1600, 650,500, 600,1650, 600,1650, 600,1650, 650};
     //(4,3)
     private static final int[] Lpurple = {9300,4350, 600,550, 600,550, 600,550, 550,600, 550,550, 600,550, 600,500, 600,550, 600,1650, 600,1650, 600,1650, 600,1650, 600,550, 650,1650, 600,1650, 600,1650, 600,500, 650,1600, 650,1600, 650,500, 650,1600, 600,550, 650,500, 600,500, 650,1650, 600,500, 650,500, 600,1650, 600,550, 600,1650, 600,1650, 600,1650, 650};
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

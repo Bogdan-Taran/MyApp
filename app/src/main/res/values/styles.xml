@@ -31,5 +31,7 @@
     <style name="SwitchCustomSoftYellow" parent="Widget.AppCompat.CompoundButton.Switch">
         <item name="track">@drawable/track_custom</item>
         <item name="android:thumb">@drawable/thumb_img_and_custom</item>
+        <item name="android:textOn">вкл</item>
+        <item name="android:textOff">выкл</item>
     </style>
 </resources>
