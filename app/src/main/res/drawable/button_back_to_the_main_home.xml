@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="fill"
+        android:drawable="@drawable/circle_back_to_the_main_home"/>
+    <item
+        android:drawable="@drawable/back_pointer"
+        android:top="18dp"
+        android:bottom="18dp"
+        android:start="15dp"
+        android:end="15dp"
+
+        />
+</layer-list>

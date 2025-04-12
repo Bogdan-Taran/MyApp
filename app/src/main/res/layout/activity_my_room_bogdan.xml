@@ -17,22 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/circle_room_bogdan"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_back_from_room_bogdan_to_main_home"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="20dp"
-            app:cardBackgroundColor="@color/grey3"
-            app:cardCornerRadius="100dp">
+            android:background="@drawable/button_back_to_the_main_home"
+            >
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:src="@drawable/back_pointer" />
 
-        </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.AppCompatButton>
 
         <TextView
             android:layout_gravity="center_vertical"
