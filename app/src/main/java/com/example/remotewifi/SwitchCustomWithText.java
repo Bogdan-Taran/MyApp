@@ -13,7 +13,7 @@ import android.util.AttributeSet;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SwitchCompat;
 
-
+// не будем использовать, потомучто пока и так пойдёт (надо настроить текст чтобы он был в правильных позициях)
 
 public class SwitchCustomWithText extends SwitchCompat{
 

@@ -5,227 +5,292 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PresetActivity"
-    android:background="@drawable/gradient_background_for_activities">
+    tools:context=".TheHomeActivity">
 
-    <LinearLayout
-        android:id="@+id/textImg_top_room_preset"
+    <ImageView
+        android:id="@+id/img_background_for_activity_preset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_background_for_activity_preset"
+        android:scaleType="centerCrop" />
+
+    <TableRow
+        android:id="@+id/main_textTop_room_Bogdan"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/black_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_back_from_room_bogdan_to_main_home"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/button_back_to_the_main_home"
+            >
+
+
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Комната Богдан"
+            android:textColor="@color/white"
+            android:textSize="28dp" />
+    </TableRow>
+
+    <RadioGroup
+        android:id="@+id/devises_presets_switch"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backgrounds_devices_presets"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/border_under_textview_">
+        app:layout_constraintTop_toBottomOf="@id/main_textTop_room_Bogdan">
 
-        <ImageButton
-            android:backgroundTint="#9FB900C6"
-            android:id="@+id/btn_backdpace"
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/devices_radio_button"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/baseline_keyboard_backspace_24"
-            android:layout_weight="6"
-            />
-        <TextView
-            android:id="@+id/text_top_my_room_rgb"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:fontFamily="@font/beauty_font_rus"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:layout_weight="1"
+            android:button="@null"
             android:gravity="center"
-            android:layout_gravity="center"
-            android:text="ПРЕСЕТЫ"
+            android:text="Устройства"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_names_of_activities_inTop" />
+            android:textSize="27dp" />
 
-        <ImageButton
-            android:id="@+id/btn_home"
-            android:backgroundTint="#9FB900C6"
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/presets_radio_button"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="6"
-            android:src="@drawable/baseline_home_24" />
-
-    </LinearLayout>
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:background="@drawable/backgroind_for_selected_activity_devices_presets"
+            android:gravity="center"
+            android:text="Пресеты"
+            android:textColor="@color/white"
+            android:textSize="27dp" />
+    </RadioGroup>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textImg_top_room_preset">
+        app:layout_constraintTop_toBottomOf="@id/devises_presets_switch">
 
-        <FrameLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
 
-            <LinearLayout
+            <TableRow
+                android:id="@+id/all_light"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/gradient_linearlayout_presets"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/backgrounds_devices_presets"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                >
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_turn_on_all_light"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/gradient_btn_turn_on_all_light"
-                    android:text="Вкл"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_in_presets"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:layout_marginEnd="10dp"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_turn_off_all_light"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/gradient_btn_turn_off_all_light"
-                    android:text="Выкл"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_in_presets"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:layout_marginEnd="10dp"
-                    />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/circle_img_all_light"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="20dp"
+                    app:cardBackgroundColor="@color/grey2"
+                    app:cardCornerRadius="100dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/all_light_preset" />
+
+                </androidx.cardview.widget.CardView>
+
                 <TextView
-                    android:id="@+id/textview_turn_onoff_all_light"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="ВЕСЬ СВЕТ"
-                    android:background="@drawable/gradient_textview_turn_onoff_all_light"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:textSize="@dimen/text_size_in_presets"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:layout_weight="10"
-                    />
-
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="100dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/gradient_linearlayout_presets"
-
-                >
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_turn_on_all_podsvetka_stol"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/gradient_btn_turn_on_all_light"
-                    android:text="Вкл"
+                    android:gravity="center_vertical"
+                    android:text="Весь свет"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_in_presets"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:layout_marginEnd="10dp"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_turn_off_all_podsvetka_stol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/gradient_btn_turn_off_all_light"
-                    android:text="Выкл"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_in_presets"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:layout_marginEnd="10dp"
-                    />
-                <TextView
-                    android:id="@+id/textview_turn_all_podsvetka_stol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="СВЕТ СТОЛ"
-                    android:background="@drawable/gradient_textview_turn_onoff_all_light"
-                    android:fontFamily="@font/beauty_font_rus"
-                    android:textSize="@dimen/text_size_in_presets"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:layout_weight="10"/>
+                    android:textSize="25dp" />
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="185dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="20dp"
-                >
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_end_of_the_film"
+                <include
+                    android:id="@+id/btn_turn_on_off_all_light"
+                    layout="@layout/switch_custom_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/table_light"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/backgrounds_devices_presets"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/all_light">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/circle_img_table_light"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="20dp"
+                    app:cardBackgroundColor="@color/grey2"
+                    app:cardCornerRadius="100dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:padding="7dp"
+                        android:src="@drawable/table_light_preset" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/gradient_for_presets"
+                    android:gravity="center_vertical"
+                    android:text="Свет стол"
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
+
+                <include
+                    android:id="@+id/btn_turn_on_off_all_podsvetka_stol"
+                    layout="@layout/switch_custom_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/end_of_film"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/backgrounds_devices_presets"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/table_light">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/circle_img_end_of_film"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="20dp"
+                    app:cardBackgroundColor="@color/grey2"
+                    app:cardCornerRadius="100dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/end_of_film_preset" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:text="Конец фильма"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_in_presets"
-                    android:fontFamily="@font/beauty_font_rus"
-                    />
-            </LinearLayout>
+                    android:textSize="25dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="275dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="20dp"
-                >
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_turn_everything_off"
+                <include
+                    android:id="@+id/btn_end_of_the_film"
+                    layout="@layout/switch_custom_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/every_device"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/backgrounds_devices_presets"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/end_of_film">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/circle_img_every_device"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="20dp"
+                    app:cardBackgroundColor="@color/grey2"
+                    app:cardCornerRadius="100dp">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/every_device_preset" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#D84B68FA"
-                    android:text="Выключить всё"
+                    android:gravity="center_vertical"
+                    android:text="Все устройства"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_in_presets"
-                    android:fontFamily="@font/beauty_font_rus"
-                    />
-            </LinearLayout>
+                    android:textSize="25dp" />
+
+                <include
+                    android:id="@+id/btn_turn_everything_off"
+                    layout="@layout/switch_custom_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp" />
+            </TableRow>
 
 
 
-
-
-
-
-
-
-        </FrameLayout>
-
-
-
-
-
-
-
-
-
-
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

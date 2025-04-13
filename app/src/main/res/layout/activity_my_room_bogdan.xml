@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     android:background="#010101"
     tools:context=".TheHomeActivity">
+    <ImageView
+        android:id="@+id/img_background_for_activity_preset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_for_room_bogdan_devices"
+        android:scaleType="centerCrop" />
 
     <TableRow
         android:id="@+id/main_textTop_room_Bogdan"

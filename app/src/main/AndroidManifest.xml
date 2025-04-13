@@ -18,15 +18,17 @@
         android:theme="@style/Theme.RemoteWiFi"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".ActivityDevicesAndPresets"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/style" />
 
         <activity
             android:name=".TheHomeActivity_2"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".RegistrationActivity"
             android:exported="true" />
