@@ -82,9 +82,17 @@ public class TheHomeActivity extends AppCompatActivity {
 
 
         circle_room_bogdan = findViewById(R.id.circle_room_bogdan);
-        circle_room_bogdan.setOnClickListener(v -> {
-            Intent intent_to_room_bogdan = new Intent(TheHomeActivity.this, ActivityMyRoomBogdan.class);
-            startActivity(intent_to_room_bogdan);finish();
+//        circle_room_bogdan.setOnClickListener(v -> {
+//            Intent intent_to_room_bogdan = new Intent(TheHomeActivity.this, ActivityDevicesAndPresets.class);
+//            startActivity(intent_to_room_bogdan);finish();
+//        });
+//
+        circle_room_bogdan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_to_room_bogdan = new Intent(TheHomeActivity.this, ActivityDevicesAndPresets.class);
+                startActivity(intent_to_room_bogdan);finish();
+            }
         });
 
 

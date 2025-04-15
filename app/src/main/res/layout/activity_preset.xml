@@ -14,92 +14,22 @@
         android:src="@drawable/img_background_for_activity_preset"
         android:scaleType="centerCrop" />
 
-    <TableRow
-        android:id="@+id/main_textTop_room_Bogdan"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="@color/black_light"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_back_from_room_bogdan_to_main_home"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="20dp"
-            android:background="@drawable/button_back_to_the_main_home"
-            >
-
-
-
-        </androidx.appcompat.widget.AppCompatButton>
-
-        <TextView
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:text="Комната Богдан"
-            android:textColor="@color/white"
-            android:textSize="28dp" />
-    </TableRow>
-
-    <RadioGroup
-        android:id="@+id/devises_presets_switch"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/backgrounds_devices_presets"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_textTop_room_Bogdan">
-
-        <RadioButton
-            android:id="@+id/devices_radio_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:text="Устройства"
-            android:textColor="@color/white"
-            android:textSize="27dp" />
-
-        <RadioButton
-            android:id="@+id/presets_radio_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"
-            android:layout_weight="1"
-            android:button="@null"
-            android:background="@drawable/backgroind_for_selected_activity_devices_presets"
-            android:gravity="center"
-            android:text="Пресеты"
-            android:textColor="@color/white"
-            android:textSize="27dp" />
-    </RadioGroup>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/devises_presets_switch">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="200dp">
 
             <TableRow
+
                 android:id="@+id/all_light"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"

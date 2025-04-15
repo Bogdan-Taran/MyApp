@@ -3,16 +3,21 @@ package com.example.remotewifi;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
@@ -20,55 +25,44 @@ import com.bumptech.glide.request.transition.Transition;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
-public class PresetActivity extends AppCompatActivity {
+public class PresetActivity extends Fragment {
 
-    private ImageView backgroundImage;
+    ImageView backgroundImage;
+    Button btn_turn_on_off_all_light;
+    Button btn_turn_on_off_all_podsvetka_stol;
+    Button btn_end_of_the_film;
+    Button btn_turn_everything_off;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_preset, container, false);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_preset);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
 
+        backgroundImage = view.findViewById(R.id.img_background_for_activity_preset);
 
-        backgroundImage = findViewById(R.id.img_background_for_activity_preset);
+//        btn_turn_on_off_all_light = view.findViewById(R.id.btn_turn_on_off_all_light);
+//
+//        btn_turn_on_off_all_podsvetka_stol = view.findViewById(R.id.btn_turn_on_off_all_podsvetka_stol);
+//
+//        btn_end_of_the_film = view.findViewById(R.id.btn_end_of_the_film);
+//        btn_turn_everything_off = view.findViewById(R.id.btn_turn_everything_off);
 
-        Button btn_turn_on_all_light = findViewById(R.id.btn_turn_on_off_all_light);
-
-        Button btn_turn_on_all_podsvetka_stol = findViewById(R.id.btn_turn_on_off_all_podsvetka_stol);
-
-        Button btn_end_of_the_film = findViewById(R.id.btn_end_of_the_film);
-        Button btn_turn_everything_off = findViewById(R.id.btn_turn_everything_off);
-
-        blurBackgroundWithGlide();
-
-    }
-
-
-
-
-
-    //    размытие бэкграунда
-    private void blurBackgroundWithGlide() {
+        // Загрузка изображения через Glide
         Glide.with(this)
-                .load(R.drawable.background_room) // Загружаем изображение
-                .transform(new BlurTransformation(10)) // Размытие с радиусом 25
-                .into(new CustomTarget<Drawable>() {
-                    @Override
-                    public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
-                        backgroundImage.setImageDrawable(resource);
-                    }
+                .load(R.drawable.img_background_for_activity_preset) // Укажите нужное изображение
+                .transform(new BlurTransformation(25)) // Размытие с радиусом 25
+                .into(backgroundImage);
 
-                    @Override
-                    public void onLoadCleared(Drawable placeholder) {
-                        // Ничего не делаем при очистке
-                    }
-                });
-    }
+
+    };
+
+
 }

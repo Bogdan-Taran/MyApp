@@ -5,7 +5,19 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityDevicesAndPresets">
+    tools:context=".ActivityDevicesAndPresets"
+    android:background="@color/black">
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_devices_and_presets"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TableRow
         android:id="@+id/main_textTop_room_Bogdan"
@@ -38,7 +50,7 @@
     </TableRow>
 
     <RadioGroup
-        android:id="@+id/devises_presets_switch"
+        android:id="@+id/devises_presets_switch_group"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
@@ -57,6 +69,7 @@
             android:layout_marginTop="1dp"
             android:layout_marginBottom="1dp"
             android:layout_weight="1"
+            android:checked="true"
             android:background="@drawable/backgroind_for_selected_activity_devices_presets"
             android:button="@null"
             android:gravity="center"
@@ -72,6 +85,7 @@
             android:layout_marginTop="1dp"
             android:layout_marginBottom="1dp"
             android:layout_weight="1"
+            android:background="@drawable/backgroind_for_selected_activity_devices_presets"
             android:button="@null"
             android:gravity="center"
             android:text="Пресеты"

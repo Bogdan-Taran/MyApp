@@ -7,16 +7,21 @@ package com.example.remotewifi;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
@@ -27,63 +32,41 @@ import jp.wasabeef.glide.transformations.BlurTransformation;
 
 
 
-public class ActivityMyRoomBogdan extends AppCompatActivity {
+public class ActivityMyRoomBogdan extends Fragment {
 
     private SwitchCustomWithText customSwitch;
-    private Button button_back_from_room_bogdan_to_main_home;
-    private ImageView backgroundImage;
+
+    ImageView backgroundImage;
 
 
+    @Nullable
+    @Override
+   public View onCreateView(@NonNull LayoutInflater inflater,
+                            @Nullable ViewGroup container,
+                            @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_my_room_bogdan, container, false);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_room_bogdan);
-        button_back_from_room_bogdan_to_main_home = findViewById(R. id. button_back_from_room_bogdan_to_main_home);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        // Setup any handles to view objects here
+        // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
 
-        // Скрываем status bar
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-        );
+        Button button_back_from_room_bogdan_to_main_home = view.findViewById(R.id.button_back_from_room_bogdan_to_main_home);
+
 
         // Инициализация элементов
         //customSwitch = findViewById(R.id.switchButton);
-        backgroundImage = findViewById(R.id.img_background_for_activity_preset);
+        backgroundImage = view.findViewById(R.id.img_background_for_activity_preset);
 
-
-        blurBackgroundWithGlide();
-
-//        Ставим кликер на кнопку чтобы перебрасывало на главный экрна
-        button_back_from_room_bogdan_to_main_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent_from_room_bogdan_to_main_home = new Intent(ActivityMyRoomBogdan.this, TheHomeActivity.class);
-                startActivity(intent_from_room_bogdan_to_main_home);finish();
-            }
-        });
-
-
-
-
-    }
-
-//    размытие бэкграунда
-    private void blurBackgroundWithGlide() {
+        // Загрузка изображения через Glide
         Glide.with(this)
-                .load(R.drawable.background_room) // Загружаем изображение
-                .transform(new BlurTransformation(10)) // Размытие с радиусом 25
-                .into(new CustomTarget<Drawable>() {
-                    @Override
-                    public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
-                        backgroundImage.setImageDrawable(resource);
-                    }
+                .load(R.drawable.background_for_room_bogdan_devices) // Укажите нужное изображение
+                .transform(new BlurTransformation(25)) // Размытие с радиусом 25
+                .into(backgroundImage);
 
-                    @Override
-                    public void onLoadCleared(Drawable placeholder) {
-                        // Ничего не делаем при очистке
-                    }
-                });
     }
+
 
 }
